@@ -50,6 +50,9 @@
   top: 5.5rem;
   display: grid;
   gap: var(--s-4);
+  /* Short laptop screens keep the photo and its views in view while sticky. */
+  width: min(100%, calc(100vh - 13rem));
+  width: min(100%, calc(100svh - 13rem));
 }
 
 .stage {
@@ -76,13 +79,13 @@
 
 .thumbs {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--s-3);
 }
 
 .thumb {
-  width: 5rem;
-  height: 5rem;
+  flex: 0 1 5rem;
+  min-width: 0;
+  aspect-ratio: 1;
   padding: var(--s-1);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -305,6 +308,9 @@
   }
   .gallery {
     position: static;
+    /* Landscape phones: the photo fits the screen and the name follows it. */
+    width: min(100%, calc(100vh - 9rem));
+    width: min(100%, calc(100svh - 9rem));
   }
   .name {
     font-size: var(--t-3xl);
@@ -346,7 +352,6 @@
 /* Four views must fit a 360px phone. */
 @media (max-width: 420px) {
   .thumb {
-    width: 4.25rem;
-    height: 4.25rem;
+    flex-basis: 4.25rem;
   }
 }

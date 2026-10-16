@@ -199,6 +199,11 @@
   transform: scale(0.97);
 }
 
+/* The bag icon keeps its size on narrow phones. */
+.bag svg {
+  flex-shrink: 0;
+}
+
 .count {
   display: inline-grid;
   place-items: center;
@@ -323,7 +328,9 @@
 
 .compactInner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  /* Equal sides centre the brand; on narrow phones the actions keep their
+     own width instead of overlapping it. */
+  grid-template-columns: minmax(auto, 1fr) auto minmax(auto, 1fr);
   align-items: center;
   gap: var(--s-4);
   max-width: var(--page-max);
