@@ -4,6 +4,8 @@
   justify-items: center;
   width: min(100%, 17rem);
   margin-inline: auto;
+  /* The label lettering scales with the bottle, not the viewport. */
+  container-type: inline-size;
   transition:
     --mid 600ms var(--ease-out),
     --deep 600ms var(--ease-out);
@@ -127,6 +129,8 @@
   max-width: 100%;
   font-family: var(--f-display);
   font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  /* Narrow bottles (phones, thumbnails) keep whole words on the label. */
+  font-size: min(clamp(1.25rem, 1rem + 1vw, 1.75rem), 10cqi);
   font-style: italic;
   line-height: 1.05;
   overflow-wrap: anywhere;
@@ -147,6 +151,29 @@
   font-size: 0.625rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+/* Thumbnail-sized bottles keep their proportions: the label shrinks with the
+   glass instead of stretching it. */
+.body,
+.label {
+  min-width: 0;
+}
+
+@container (max-width: 6rem) {
+  /* Lettering is illegible at this size; the label reads as a plain plate. */
+  .house,
+  .name,
+  .meta {
+    display: none;
+  }
+  .label {
+    gap: 6cqi;
+    padding: 12cqi 8cqi;
+  }
+  .rule {
+    width: 40%;
+  }
 }
 
 .shadow {
