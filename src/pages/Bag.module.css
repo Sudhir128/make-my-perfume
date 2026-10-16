@@ -1,0 +1,233 @@
+.page {
+  padding-block: var(--s-8) var(--section);
+}
+
+.title {
+  font-size: var(--t-4xl);
+  line-height: 0.95;
+  letter-spacing: var(--track-display);
+}
+
+.title em {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-5);
+  padding-block: var(--s-10) var(--section);
+}
+
+.empty .title em {
+  display: block;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 1fr);
+  align-items: start;
+  gap: var(--s-7);
+  margin-top: var(--s-7);
+}
+
+.lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--s-5);
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.thumb {
+  display: block;
+  border-radius: var(--radius-frame);
+}
+
+.lineBody {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.family {
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.lineName {
+  font-size: var(--t-xl);
+  line-height: 1.1;
+}
+
+.lineName a {
+  text-decoration: none;
+}
+
+.lineName a:hover {
+  text-decoration: underline;
+}
+
+.lineActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  margin-top: var(--s-3);
+}
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 2.75rem;
+  padding: 0 var(--s-2);
+  border: 0;
+  border-radius: var(--radius-small);
+  background: none;
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+  cursor: pointer;
+}
+
+.remove:hover {
+  color: var(--ink);
+}
+
+.lineTotal {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+
+.summary {
+  position: sticky;
+  top: 5.5rem;
+  display: grid;
+  gap: var(--s-4);
+  padding: var(--s-6);
+  border-radius: var(--radius-frame);
+  background: var(--surface);
+  box-shadow: var(--e1);
+}
+
+.summaryTitle {
+  font-size: var(--t-xl);
+}
+
+.totals {
+  display: grid;
+  gap: var(--s-3);
+  margin: 0;
+}
+
+.totals > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totals dd {
+  margin: 0;
+}
+
+.subtotal {
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+
+.checkout {
+  width: 100%;
+}
+
+.dialog {
+  /* The global margin reset removes the native modal's centring. */
+  margin: auto;
+  width: min(calc(100% - 2 * var(--gutter)), 30rem);
+  padding: var(--s-7) var(--s-6) var(--s-6);
+  border: 0;
+  border-radius: var(--radius-frame);
+  background: var(--c-paper);
+  color: var(--c-ink-dark);
+  box-shadow: var(--e3);
+}
+
+.dialog[open] {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-4);
+}
+
+.dialog::backdrop {
+  background: rgb(20 17 14 / 0.45);
+}
+
+.dialogTitle {
+  font-size: var(--t-2xl);
+  line-height: var(--lh-display);
+}
+
+.dialogTitle em {
+  display: block;
+}
+
+.dialogClose {
+  position: absolute;
+  top: var(--s-3);
+  right: var(--s-3);
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--c-ink-dark);
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .summary {
+    position: static;
+  }
+  .title {
+    font-size: var(--t-3xl);
+  }
+}
+
+@media (max-width: 520px) {
+  .line {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+  .lineTotal {
+    grid-column: 2;
+  }
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}

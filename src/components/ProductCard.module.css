@@ -1,0 +1,153 @@
+.card {
+  display: grid;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-3) var(--s-5);
+  border-radius: calc(var(--radius-frame) + 6px);
+  background: var(--surface);
+  box-shadow: var(--e1);
+  transition:
+    transform var(--d-slow) var(--ease-out),
+    box-shadow var(--d-slow) var(--ease-out),
+    background-color 420ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+.media {
+  display: block;
+  border-radius: var(--radius-frame);
+}
+
+.body {
+  display: grid;
+  gap: var(--s-2);
+  padding-inline: var(--s-3);
+}
+
+.family {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-3);
+}
+
+.name {
+  font-size: var(--t-xl);
+  line-height: 1.1;
+}
+
+.name a {
+  text-decoration: none;
+  border-radius: var(--radius-small);
+}
+
+.name a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--decor);
+}
+
+.tagline {
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-lg);
+  line-height: 1.3;
+}
+
+.notes {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.add {
+  justify-self: start;
+  margin-top: var(--s-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--e2);
+  }
+}
+
+/* ── Decant entrance (once). Pre-states only under html.motion-ok. ──── */
+.media {
+  transition: clip-path 760ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+.body {
+  transition:
+    opacity 520ms var(--ease-out) calc(var(--reveal-delay, 0ms) + 200ms),
+    transform 520ms var(--ease-out) calc(var(--reveal-delay, 0ms) + 200ms);
+}
+
+/* No empty panel before the decant: the card's surface arrives with it. */
+:global(.motion-ok) .card:not([data-revealed]) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+:global(.motion-ok) .card:not([data-revealed]) .media {
+  clip-path: inset(100% 0 0 0 round var(--radius-frame));
+}
+
+:global(.motion-ok) .card:not([data-revealed]) .body {
+  opacity: 0;
+  transform: translateY(var(--rise));
+}
+
+.card[data-revealed] .media {
+  clip-path: inset(0 0 0 0 round var(--radius-frame));
+}
+
+/* ── Compact: thumbnail beside text. The pending label moves into the text. ── */
+.compact {
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-4);
+  padding: var(--s-3);
+}
+
+.compact .body {
+  padding-inline: 0;
+  gap: var(--s-1);
+}
+
+.compact .name {
+  font-size: var(--t-lg);
+}
+
+.compact .tagline {
+  font-size: var(--t-base);
+}
+
+.compact .add {
+  margin-top: var(--s-2);
+}
+
+.pendingNote {
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+}
+
+/* Temporary product photography, in the same shouldered frame as the artwork. */
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--c-paper);
+}

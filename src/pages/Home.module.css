@@ -1,0 +1,689 @@
+/* "From Nature to Signature", Still tier. Stage order follows Home.tsx. */
+.narrative {
+  position: relative;
+}
+
+/* Jump targets clear the compact header. */
+.collection,
+.signature {
+  scroll-margin-top: 4.5rem;
+}
+
+.collection:focus,
+.signature:focus {
+  outline: none;
+}
+
+.h2,
+.h2Center {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+}
+
+.h2 em,
+.h2Center em {
+  display: block;
+}
+
+.h3 {
+  font-size: var(--t-2xl);
+  line-height: var(--lh-display);
+}
+
+.lede {
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: var(--t-lg);
+}
+
+.body {
+  max-width: 44ch;
+  color: var(--ink-soft);
+}
+
+.caption {
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+/* ── 1. Ingredients (hero) ───────────────────────────────────────────── */
+.hero {
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: var(--s-8);
+  min-height: min(50rem, calc(100svh - 8rem));
+  padding-block: var(--s-8) var(--s-8);
+}
+
+.heroCopy {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-5);
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: var(--t-4xl);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: var(--track-display);
+}
+
+.heroCaps {
+  display: block;
+  text-transform: uppercase;
+}
+
+.heroTitle em {
+  display: block;
+  font-size: 1.04em;
+}
+
+.heroLede {
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: var(--t-lg);
+  font-weight: 300;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3) var(--s-6);
+  margin-top: var(--s-2);
+}
+
+.heroArt {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 27rem);
+  padding: var(--s-6) 0;
+}
+
+.flask {
+  filter: drop-shadow(0 30px 40px rgb(60 45 25 / 0.22));
+}
+
+/* Depth layers. `--p` is written on the hero only on desktop with motion
+   allowed; elsewhere it is unset and the layers rest at 0. */
+.flaskLayer {
+  position: relative;
+  z-index: 1;
+  transform: translateY(calc(var(--p, 0) * -48px));
+}
+
+.sprigLayer {
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  left: -14%;
+  width: 50%;
+  transform: translateY(calc(var(--p, 0) * -96px)) rotate(calc(var(--p, 0) * -4deg));
+  transform-origin: 20% 90%;
+  pointer-events: none;
+}
+
+.sprig {
+  width: 100%;
+  color: var(--c-gold-text);
+}
+
+.sprig :is(path, circle) {
+  stroke-dasharray: 1;
+  animation: draw 1400ms var(--ease-out) calc(300ms + var(--s, 0) * 70ms) both;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+.heroTag {
+  position: absolute;
+  left: 50%;
+  bottom: var(--s-4);
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+/* ── 2. Composition and families ─────────────────────────────────────── */
+.composition {
+  display: grid;
+  gap: var(--s-7);
+  padding-block: var(--s-8) var(--section);
+  border-top: 1px solid var(--line);
+}
+
+.compositionHead {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+  text-align: center;
+}
+
+/* ── 3. Bottle and collection ────────────────────────────────────────── */
+.collection {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+  /* The bottle's glow must never widen the page. clip keeps sticky working. */
+  overflow-x: clip;
+}
+
+.collectionInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-8);
+  padding-block: var(--section);
+}
+
+.collectionContent {
+  display: grid;
+  gap: var(--s-6);
+}
+
+.collectionHead {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-4);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The bottle holds its place while the cards pass, taking their light. */
+.bottleColumn {
+  align-self: stretch;
+}
+
+.bottleSticky {
+  position: sticky;
+  top: calc(50vh - 14rem);
+  display: grid;
+  gap: var(--s-4);
+  padding-block: var(--s-6);
+}
+
+/* ── 4. Ritual ───────────────────────────────────────────────────────── */
+.ritual {
+  overflow: hidden;
+}
+
+.ritualInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: var(--s-7);
+  padding-block: var(--s-9) var(--s-8);
+}
+
+.ritualArt {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  min-height: 22rem;
+}
+
+.ritualBottle {
+  position: relative;
+  width: min(48%, 12rem);
+  margin-right: 10%;
+}
+
+/* The mist leaves the nozzle (about 42% across, 4% down the bottle) toward
+   the left; the cone's apex is the svg's right-middle point. */
+.mist {
+  right: 55%;
+  top: 8%;
+  width: 190%;
+  aspect-ratio: 2;
+  /* Own-height translate puts the cone's apex exactly on the nozzle line. */
+  translate: 0 -50%;
+}
+
+.ritualCopy {
+  justify-self: end;
+  text-align: right;
+}
+
+.ritualLine {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+}
+
+.ritualLine em {
+  display: block;
+}
+
+/* ── 6. Signature and Make yours ─────────────────────────────────────── */
+.signature {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  overflow-x: clip;
+}
+
+/* The bookend: real HTML, the same words that open the page. */
+.signatureTitle {
+  padding-top: calc(var(--section) * 0.5);
+  font-size: var(--t-4xl);
+  font-weight: 500;
+  line-height: 0.92;
+  text-align: center;
+}
+
+.signatureTitle em {
+  display: block;
+}
+
+.makeInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-8);
+  padding-block: var(--s-8) var(--section);
+}
+
+.makeArt {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+}
+
+.makeCopy {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-4);
+  max-width: 34rem;
+}
+
+.makeLine {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-xl);
+  line-height: 1.2;
+}
+
+.makeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.field {
+  display: grid;
+  gap: var(--s-2);
+  width: 100%;
+  max-width: 24rem;
+  margin-block: var(--s-2) var(--s-3);
+}
+
+.field label {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.field input {
+  min-height: 3rem;
+  padding: 0 var(--s-5);
+  border: 1px solid var(--c-ink-dark-soft);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--t-base);
+}
+
+.field input::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.hint {
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+    min-height: 0;
+    padding-block: var(--s-7) var(--s-8);
+  }
+  .heroArt {
+    width: min(78%, 21rem);
+  }
+  .collectionInner {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  /* Phones: the bottle sits above the cards instead of beside them. */
+  .bottleColumn {
+    order: -1;
+  }
+  .bottleSticky {
+    position: static;
+    width: min(46%, 10rem);
+    margin-inline: auto;
+    padding-block: 0;
+  }
+  .ritualInner {
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    padding-block: var(--s-8) var(--s-7);
+  }
+  .ritualArt {
+    min-height: 16rem;
+  }
+  .ritualCopy {
+    justify-self: center;
+    text-align: center;
+  }
+  .makeInner {
+    grid-template-columns: 1fr;
+    gap: var(--s-7);
+  }
+  .makeArt {
+    order: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroTitle,
+  .signatureTitle {
+    font-size: clamp(2.75rem, 1.5rem + 7vw, 3.75rem);
+  }
+}
+
+/* ── Continuous sequence wrapper ─────────────────────────────────────── */
+.sequence {
+  position: relative;
+}
+
+.sequence > section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Editorial stock photography (legacy site, unbranded only; see
+   docs/editorial-imagery.md). Always captioned, never a product photo. */
+.editorial {
+  display: grid;
+  gap: var(--s-2);
+  width: min(100%, 28rem);
+  margin: 0 0 var(--s-4);
+}
+
+.editorial img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-frame);
+  box-shadow: var(--e2);
+}
+
+.editorial figcaption {
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+}
+
+.editorialTall {
+  width: min(100%, 18rem);
+  margin: var(--s-5) 0 0 auto;
+}
+
+/* ── 5. Signature stage: the bookend inside the sequence ─────────────── */
+.signatureStage {
+  padding-block: var(--section);
+}
+
+/* ── Full tier: content holds the left; the 3D stage draws on the right ── */
+.narrative[data-tier='full'] .heroArt,
+.narrative[data-tier='full'] .bottleColumn > *,
+.narrative[data-tier='full'] .ritualArt {
+  visibility: hidden;
+}
+
+.narrative[data-tier='full'] :global([data-scene-slot='accord']) {
+  display: none;
+}
+
+/* Sections are transparent and borderless here: nothing may draw across the scene. */
+.narrative[data-tier='full'] .collection,
+.narrative[data-tier='full'] .composition,
+.narrative[data-tier='full'] .ritual,
+.narrative[data-tier='full'] .signatureStage {
+  background: transparent;
+  border: 0;
+}
+
+.narrative[data-tier='full'] .composition {
+  min-height: 115vh;
+  justify-items: start;
+  border-top: 0;
+}
+
+.narrative[data-tier='full'] .composition > * {
+  width: min(48%, 40rem);
+}
+
+.narrative[data-tier='full'] .compositionHead {
+  justify-items: start;
+  text-align: left;
+}
+
+.narrative[data-tier='full'] :global([data-ring-layout]) {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
+}
+
+.narrative[data-tier='full'] :global([data-ring-layout]) ul {
+  justify-items: stretch;
+}
+
+.narrative[data-tier='full'] :global([data-ring-layout]) li {
+  margin: 0;
+}
+
+.narrative[data-tier='full'] :global([data-ring-layout]) a {
+  flex-direction: row;
+  padding: var(--s-2) var(--s-4) var(--s-2) var(--s-3);
+  text-align: left;
+}
+
+.narrative[data-tier='full'] .ritual {
+  min-height: 115vh;
+  display: grid;
+  align-items: center;
+}
+
+.narrative[data-tier='full'] .ritualArt {
+  display: none;
+}
+
+.narrative[data-tier='full'] .ritualCopy {
+  grid-column: 1;
+  justify-self: start;
+  text-align: left;
+}
+
+.narrative[data-tier='full'] .ritualInner {
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+}
+
+.narrative[data-tier='full'] .editorialTall {
+  margin-left: 0;
+}
+
+/* The bookend gets a full screen; the mist gathers into it. */
+.narrative[data-tier='full'] .signatureStage {
+  display: grid;
+  align-items: center;
+  min-height: 130vh;
+}
+
+/* ── Explore scents and best sellers (after the Drydown) ─────────────── */
+.explore,
+.bestSellers {
+  padding-top: var(--section);
+}
+
+.sectionHead {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+  margin-bottom: var(--s-6);
+}
+
+.sectionHeadRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+}
+
+.sectionHeadRow > div {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-3) var(--s-4);
+  border-radius: calc(var(--radius-frame) + 6px);
+  background: var(--surface);
+  box-shadow: var(--e1);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    transform var(--d-slow) var(--ease-out),
+    box-shadow var(--d-slow) var(--ease-out);
+}
+
+.tileArt {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-frame);
+  aspect-ratio: 3 / 2;
+}
+
+.tileArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+
+.tileText {
+  display: grid;
+  gap: var(--s-1);
+  padding-inline: var(--s-2);
+}
+
+.tileFamily {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.tileFamily svg {
+  color: var(--c-gold-text);
+}
+
+.tileMood {
+  color: var(--ink-soft);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-lg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--e2);
+  }
+  .tile:hover .tileArt img {
+    transform: scale(1.04);
+  }
+}
+
+.bestGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Make yours follows: give it its normal top spacing back. */
+.bestSellers + .signature .makeInner {
+  padding-top: var(--section);
+}
+
+@media (max-width: 1100px) {
+  .bestGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .tiles,
+  .bestGrid {
+    grid-template-columns: 1fr;
+  }
+}

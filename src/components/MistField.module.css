@@ -1,0 +1,6 @@
+.mist {
+  position: absolute;
+  overflow: visible;
+  fill: var(--c-gold-decor);
+  pointer-events: none;
+}

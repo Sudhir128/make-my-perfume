@@ -1,0 +1,10 @@
+{
+  "note": "Candidate crops of the house bottles only. Boxes are in source pixels of the 1122x1402 posters. Candidates go to scrollcraft/lab/crops/ and are NOT app assets. Verdicts live in docs/crop-audit.md; a crop enters src/assets only after it passes the audit and the owner has reviewed it.",
+  "candidates": [
+    { "id": "black-p4", "bottle": "matte-black", "poster": "MMP (4).png", "box": { "left": 640, "top": 520, "width": 420, "height": 700 } },
+    { "id": "black-p6", "bottle": "matte-black", "poster": "MMP (6).png", "box": { "left": 652, "top": 510, "width": 430, "height": 700 } },
+    { "id": "black-p8", "bottle": "matte-black", "poster": "MMP (8).png", "box": { "left": 646, "top": 440, "width": 440, "height": 780 } },
+    { "id": "amber-p3", "bottle": "faceted-amber", "poster": "MMP (3).png", "box": { "left": 636, "top": 540, "width": 460, "height": 660 } },
+    { "id": "amber-p5", "bottle": "faceted-amber", "poster": "MMP (5).png", "box": { "left": 634, "top": 580, "width": 474, "height": 670 } }
+  ]
+}

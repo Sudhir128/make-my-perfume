@@ -1,0 +1,132 @@
+/*
+ * Design tokens: "Atelier". Warm parchment editorial grounds alternating with
+ * noir bands. Light values are the default; `.noir` re-keys the same roles
+ * for dark sections. src/lib/contrast.test.ts parses this file, so keep
+ * colour tokens as plain 6-digit hex declarations.
+ */
+:root {
+  /* Light grounds (from the travertine posters) */
+  --c-parchment: #F1EDE6;
+  --c-band: #E6E0D6;
+  --c-paper: #FAF8F4;
+  --c-line-light: #D6CEC1;
+
+  /* Inks on light (logo black, warmed) */
+  --c-ink-dark: #1A1612;
+  --c-ink-dark-soft: #5E554B;
+
+  /* Gold: deep for readable text on light, decorative for lines and glyphs */
+  --c-gold-text: #7A5A22;
+  --c-gold-decor: #C99A4B;
+
+  /* Form errors */
+  --c-error: #9B2C1F;
+
+  /* Noir band (logo ground) */
+  --c-noir: #14110E;
+  --c-noir-raised: #221D18;
+  --c-line-noir: #3A332B;
+  --c-ivory: #F2E8D5;
+  --c-ivory-soft: #B3A690;
+  --c-gold-on-noir: #D5A35D;
+
+  /* Brushed-gold material ramp (logo). Surfaces only, never text. */
+  --c-metal-shadow: #CF9F3C;
+  --c-metal-mid: #E9BC63;
+  --c-metal-light: #FCF3B6;
+  --metal-brushed: linear-gradient(100deg, #CF9F3C 0%, #E9BC63 38%, #FCF3B6 52%, #E9BC63 64%, #CF9F3C 100%);
+
+  /* Semantic roles (light by default) */
+  --bg: var(--c-parchment);
+  --bg-alt: var(--c-band);
+  --surface: var(--c-paper);
+  --ink: var(--c-ink-dark);
+  --ink-soft: var(--c-ink-dark-soft);
+  --accent: var(--c-gold-text);
+  --decor: var(--c-gold-decor);
+  --line: var(--c-line-light);
+  --btn-bg: var(--c-ink-dark);
+  --btn-ink: var(--c-paper);
+  --focus: var(--c-ink-dark);
+
+  /* Type */
+  --f-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-text: 'Jost', 'Segoe UI', system-ui, sans-serif;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: clamp(1.5rem, 1.25rem + 0.9vw, 1.875rem);
+  --t-2xl: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+  --t-3xl: clamp(2.5rem, 1.6rem + 3vw, 4.25rem);
+  --t-4xl: clamp(3rem, 1.6rem + 5vw, 6.5rem);
+
+  --lh-display: 0.98;
+  --lh-heading: 1.06;
+  --lh-body: 1.65;
+
+  --track-display: -0.01em;
+  --track-heading: -0.005em;
+  --track-body: 0.005em;
+  --track-label: 0.2em;
+
+  --measure: 62ch;
+
+  /* Space: 4px base */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+  --s-11: 12rem;
+
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
+  --section: clamp(4rem, 2.4rem + 6vw, 9rem);
+  --page-max: 84rem;
+
+  /* Shape: pills for controls, one frame radius for everything framed */
+  --radius-pill: 999px;
+  --radius-frame: 16px;
+  --radius-small: 8px;
+
+  --shadow-color: 60 45 25;
+  --e1: 0 1px 2px rgb(var(--shadow-color) / 0.08), 0 2px 8px rgb(var(--shadow-color) / 0.06);
+  --e2: 0 6px 16px rgb(var(--shadow-color) / 0.1), 0 18px 40px rgb(var(--shadow-color) / 0.08);
+  --e3: 0 12px 28px rgb(var(--shadow-color) / 0.14), 0 40px 80px rgb(var(--shadow-color) / 0.12);
+
+  --focus-width: 2px;
+  --focus-offset: 3px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --d-fast: 120ms;
+  --d-base: 180ms;
+  --d-slow: 240ms;
+
+  --z-sticky: 20;
+  --z-header: 30;
+  --z-toast: 60;
+}
+
+/* Noir band: same roles, dark values. Restate `color` so text re-inks. */
+.noir {
+  --bg: var(--c-noir);
+  --bg-alt: var(--c-noir-raised);
+  --surface: var(--c-noir-raised);
+  --ink: var(--c-ivory);
+  --ink-soft: var(--c-ivory-soft);
+  --accent: var(--c-gold-on-noir);
+  --decor: var(--c-gold-on-noir);
+  --line: var(--c-line-noir);
+  --btn-bg: var(--c-gold-on-noir);
+  --btn-ink: var(--c-noir);
+  --focus: var(--c-gold-on-noir);
+  --shadow-color: 0 0 0;
+  background: var(--bg);
+  color: var(--ink);
+}

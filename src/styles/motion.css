@@ -1,0 +1,53 @@
+/*
+ * Motion system. Pre-reveal states exist only under `html.motion-ok`
+ * (see src/scroll/reveal.ts), so content is never hidden when JavaScript,
+ * IntersectionObserver or motion is unavailable.
+ */
+
+/* Colours registered as colours so the Drydown can cross-fade between scents. */
+@property --glow {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffe3a8;
+}
+@property --mid {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #d9963f;
+}
+@property --deep {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #5a2e14;
+}
+
+:root {
+  --rise: 14px;
+  --d-reveal: 620ms;
+}
+
+/* The light entrance: a block rises 14px and fades in, once. */
+.motion-ok [data-reveal='rise']:not([data-revealed]) {
+  opacity: 0;
+  transform: translateY(var(--rise));
+}
+
+[data-reveal='rise'] {
+  transition:
+    opacity var(--d-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+    transform var(--d-reveal) var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition-delay: 0ms !important;
+  }
+}
+
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

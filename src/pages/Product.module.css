@@ -1,0 +1,352 @@
+.page {
+  padding-block: var(--s-5) var(--section);
+}
+
+/* Breadcrumb */
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-1) var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--ink-soft);
+}
+
+.crumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: var(--radius-small);
+}
+
+.crumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Two columns: gallery and buying panel */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+  gap: var(--s-8);
+  margin-top: var(--s-3);
+}
+
+.gallery {
+  position: sticky;
+  top: 5.5rem;
+  display: grid;
+  gap: var(--s-4);
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-frame);
+  background: var(--surface);
+  box-shadow: var(--e1);
+}
+
+.stage > figure {
+  width: 100%;
+}
+
+.flaskView {
+  width: 62% !important;
+}
+
+.bottleView {
+  width: 58%;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.thumb {
+  width: 5rem;
+  height: 5rem;
+  padding: var(--s-1);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--d-base) var(--ease-out);
+}
+
+.thumb[aria-pressed='true'] {
+  border: 2px solid var(--ink);
+}
+
+.thumbArt {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.thumbArt > * {
+  max-height: 100%;
+}
+
+/* Buying panel */
+.info {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.family {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: var(--t-4xl);
+  line-height: 0.95;
+  letter-spacing: var(--track-display);
+}
+
+.tagline {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-xl);
+  line-height: 1.2;
+}
+
+.description {
+  max-width: 48ch;
+  color: var(--ink-soft);
+}
+
+.priceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding-block: var(--s-4);
+  border-block: 1px solid var(--line);
+}
+
+.price {
+  font-family: var(--f-display);
+  font-size: var(--t-3xl);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.perSize {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.option {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.optionLabel {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.sizeChip {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--s-5);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-weight: 500;
+}
+
+.buy {
+  display: flex;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
+
+.addButton {
+  flex: 1;
+}
+
+.buyNow {
+  width: 100%;
+}
+
+/* Accordions: native details/summary */
+.details {
+  margin-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+
+.details details {
+  border-bottom: 1px solid var(--line);
+}
+
+.details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-small);
+}
+
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details summary::after {
+  content: '+';
+  font-family: var(--f-text);
+  font-size: var(--t-xl);
+  font-weight: 300;
+  transition: transform var(--d-base) var(--ease-out);
+}
+
+.details details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.notes,
+.facts {
+  display: grid;
+  gap: var(--s-4);
+  margin: 0 0 var(--s-5);
+}
+
+.facts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.notes dt,
+.facts dt {
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.notes dd,
+.facts dd {
+  margin: var(--s-1) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+}
+
+/* Related */
+.related {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+  margin-top: var(--section);
+}
+
+.relatedTitle {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+}
+
+.relatedTitle em {
+  display: block;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-6);
+  width: 100%;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  .gallery {
+    position: static;
+  }
+  .name {
+    font-size: var(--t-3xl);
+  }
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .buy {
+    flex-direction: column;
+  }
+  .buy > div {
+    align-self: start;
+  }
+}
+
+/* The bottle illustration is sized for pages; shrink it to fit a thumbnail. */
+.thumbArt > div {
+  width: 48%;
+}
+
+/* Temporary product photography fills the gallery stage. */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbArt > img.thumbPhoto {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  border-radius: calc(var(--radius-small) - 2px);
+}
+
+/* Four views must fit a 360px phone. */
+@media (max-width: 420px) {
+  .thumb {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+}

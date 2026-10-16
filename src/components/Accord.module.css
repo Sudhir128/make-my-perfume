@@ -1,0 +1,76 @@
+.accord {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  transition:
+    --glow 600ms var(--ease-out),
+    --mid 600ms var(--ease-out),
+    --deep 600ms var(--ease-out);
+}
+
+/* A hairline orbit: the families gather around this. */
+.orbit {
+  position: absolute;
+  inset: 4%;
+  border: 1px solid var(--c-line-light);
+  border-radius: 50%;
+}
+
+.orbit::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  width: 7px;
+  height: 7px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: var(--c-gold-decor);
+}
+
+/* The liquid: lit from the upper left, deepening toward its base. */
+.body {
+  position: absolute;
+  inset: 20%;
+  border-radius: 48% 52% 50% 50% / 52% 48% 52% 48%;
+  background:
+    radial-gradient(circle at 34% 28%, rgb(255 255 255 / 0.65), transparent 22%),
+    radial-gradient(circle at 60% 70%, color-mix(in srgb, var(--glow) 70%, transparent), transparent 45%),
+    radial-gradient(circle at 50% 50%, var(--mid) 0%, color-mix(in srgb, var(--mid) 60%, var(--deep)) 62%, var(--deep) 100%);
+  box-shadow:
+    inset -10px -16px 30px color-mix(in srgb, var(--deep) 60%, transparent),
+    inset 8px 10px 24px rgb(255 255 255 / 0.25);
+}
+
+/* A curved highlight along the surface. */
+.shine {
+  position: absolute;
+  left: 28%;
+  top: 26%;
+  width: 30%;
+  height: 18%;
+  border-top: 2px solid rgb(255 255 255 / 0.55);
+  border-radius: 50%;
+  rotate: -24deg;
+}
+
+/* A single droplet leaving the body. */
+.drop {
+  position: absolute;
+  left: 62%;
+  top: 78%;
+  width: 4%;
+  aspect-ratio: 0.8;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 35% 30%, rgb(255 255 255 / 0.6), var(--mid) 60%, var(--deep));
+}
+
+.shadow {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: 6%;
+  height: 4%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--deep) 45%, transparent), transparent);
+}

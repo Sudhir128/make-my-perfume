@@ -1,0 +1,136 @@
+.page {
+  padding-block: var(--s-8) var(--section);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+}
+
+.head > div {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--c-ink-dark);
+  color: var(--c-paper);
+  font-family: var(--f-display);
+  font-size: var(--t-2xl);
+}
+
+.title {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 1fr);
+  align-items: start;
+  gap: var(--s-6);
+  margin-top: var(--s-7);
+}
+
+.side {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.card {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+  padding: var(--s-6);
+  border-radius: var(--radius-frame);
+  background: var(--surface);
+  box-shadow: var(--e1);
+}
+
+.cardTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-xl);
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+  width: 100%;
+  margin-top: var(--s-2);
+}
+
+.field {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.field input {
+  min-height: 3rem;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--c-ink-dark-soft);
+  border-radius: var(--radius-small);
+  background: var(--c-paper);
+  font-size: var(--t-base);
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--c-error);
+}
+
+.error {
+  color: var(--c-error);
+  font-size: var(--t-xs);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
+
+.link {
+  color: var(--accent);
+  font-size: var(--t-sm);
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

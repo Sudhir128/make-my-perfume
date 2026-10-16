@@ -1,0 +1,19 @@
+.loading {
+  display: grid;
+  place-items: center;
+  min-height: 60svh;
+}
+
+.seal {
+  animation: breathe 1.8s var(--ease-out) infinite alternate;
+}
+
+/* Opacity only, so reduced motion still shows a calm, static seal. */
+@keyframes breathe {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.9;
+  }
+}

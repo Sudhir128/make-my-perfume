@@ -1,0 +1,248 @@
+[
+  {
+    "id": "p-citrus-noir",
+    "slug": "citrus-noir",
+    "name": "Citrus Noir",
+    "collection": "Fresh",
+    "tagline": "Brightness with a beautiful shadow.",
+    "description": "A luminous, mineral citrus that settles into a clean, confident trail. Made for first impressions that stay.",
+    "price": 1200,
+    "sizeMl": 100,
+    "notes": {
+      "top": [
+        "Bergamot",
+        "Lemon",
+        "Sea salt"
+      ],
+      "heart": [
+        "Lavender",
+        "Neroli",
+        "Mineral air"
+      ],
+      "base": [
+        "Vetiver",
+        "Cedar",
+        "White musk"
+      ]
+    },
+    "sillage": "Moderate",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/citrus-noir",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "8–10 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Limonene"
+    ]
+  },
+  {
+    "id": "p-amber-veil",
+    "slug": "amber-veil",
+    "name": "Amber Veil",
+    "collection": "Warm",
+    "tagline": "Soft light, held close.",
+    "description": "A warm amber veil woven with saffron and a touch of vanilla. Quietly magnetic, never loud.",
+    "price": 1490,
+    "sizeMl": 50,
+    "notes": {
+      "top": [
+        "Saffron",
+        "Pink pepper",
+        "Pear"
+      ],
+      "heart": [
+        "Jasmine",
+        "Amberwood",
+        "Rose"
+      ],
+      "base": [
+        "Vanilla",
+        "Moss",
+        "Dry woods"
+      ]
+    },
+    "sillage": "Intimate",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/amber-veil",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "7–9 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Linalool"
+    ]
+  },
+  {
+    "id": "p-nocturne",
+    "slug": "nocturne",
+    "name": "Nocturne",
+    "collection": "Woody",
+    "tagline": "A darker kind of calm.",
+    "description": "Smoked woods and black tea on a polished skin scent. Composed for late rooms and long conversations.",
+    "price": 1750,
+    "sizeMl": 100,
+    "notes": {
+      "top": [
+        "Black tea",
+        "Cardamom",
+        "Bergamot"
+      ],
+      "heart": [
+        "Iris",
+        "Suede",
+        "Incense"
+      ],
+      "base": [
+        "Cedar",
+        "Patchouli",
+        "Tonka"
+      ]
+    },
+    "sillage": "Pronounced",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/nocturne",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "9–11 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Citral"
+    ]
+  },
+  {
+    "id": "p-azure-skin",
+    "slug": "azure-skin",
+    "name": "Azure Skin",
+    "collection": "Aquatic",
+    "tagline": "The air after rain.",
+    "description": "Salted skin, crisp cypress and a cool blue horizon. An effortless everyday signature.",
+    "price": 990,
+    "sizeMl": 50,
+    "notes": {
+      "top": [
+        "Yuzu",
+        "Juniper",
+        "Marine accord"
+      ],
+      "heart": [
+        "Cypress",
+        "Sage",
+        "Lotus"
+      ],
+      "base": [
+        "Driftwood",
+        "Musk",
+        "Ambergris"
+      ]
+    },
+    "sillage": "Soft",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/azure-skin",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "6–8 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Geraniol"
+    ]
+  },
+  {
+    "id": "p-velvet-fig",
+    "slug": "velvet-fig",
+    "name": "Velvet Fig",
+    "collection": "Sweet",
+    "tagline": "A little green. A little undone.",
+    "description": "Ripe fig and creamy woods with a sheer floral lift. A modern gourmand with an editorial edge.",
+    "price": 1350,
+    "sizeMl": 50,
+    "notes": {
+      "top": [
+        "Fig leaf",
+        "Mandarin",
+        "Pear"
+      ],
+      "heart": [
+        "Violet",
+        "Coconut milk",
+        "Orris"
+      ],
+      "base": [
+        "Sandalwood",
+        "Benzoin",
+        "Musk"
+      ]
+    },
+    "sillage": "Moderate",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/velvet-fig",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "7–9 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Benzyl salicylate"
+    ]
+  },
+  {
+    "id": "p-saffron-neroli",
+    "slug": "saffron-neroli",
+    "name": "Saffron Neroli",
+    "collection": "Floral",
+    "tagline": "Bright petals, warm skin.",
+    "description": "A radiant floral with neroli, saffron and creamy sandalwood. Polished, personal and easy to love.",
+    "price": 1100,
+    "sizeMl": 100,
+    "notes": {
+      "top": [
+        "Neroli",
+        "Orange blossom",
+        "Lemon"
+      ],
+      "heart": [
+        "Saffron",
+        "Tuberose",
+        "Ylang ylang"
+      ],
+      "base": [
+        "Sandalwood",
+        "Musk",
+        "Cashmere wood"
+      ]
+    },
+    "sillage": "Moderate",
+    "provenance": {
+      "source": "legacy-site",
+      "confirmed": false,
+      "ref": "https://makemyperfume.vercel.app/api/products/saffron-neroli",
+      "retrieved": "2026-10-15"
+    },
+    "longevity": "6–8 hours",
+    "ingredients": [
+      "Denatured alcohol",
+      "Parfum",
+      "Aqua",
+      "Citronellol"
+    ]
+  }
+]

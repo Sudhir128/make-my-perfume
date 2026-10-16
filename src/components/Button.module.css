@@ -1,0 +1,77 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: 3rem;
+  padding: 0 var(--s-6);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--f-text);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--d-base) var(--ease-out),
+    border-color var(--d-base) var(--ease-out),
+    color var(--d-base) var(--ease-out),
+    transform var(--d-fast) var(--ease-out);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Primary: the black bottle on light grounds, gold on noir. */
+.primary {
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+}
+
+/* Outline: a hairline pill in the current ink. */
+.ghost {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Text link with an arrow; deep gold on light, gold on noir. */
+.quiet {
+  min-height: 2.75rem;
+  padding: 0;
+  background: none;
+  color: var(--accent);
+  border-radius: var(--radius-small);
+}
+
+.small {
+  min-height: 2.5rem;
+  padding: 0 var(--s-4);
+  font-size: var(--t-xs);
+}
+
+.arrow {
+  transition: transform var(--d-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--btn-bg) 86%, var(--bg));
+  }
+  .ghost:hover:not(:disabled) {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .quiet:hover .arrow {
+    transform: translateX(3px);
+  }
+}

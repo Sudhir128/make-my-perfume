@@ -1,0 +1,35 @@
+/*
+ * Original CSS material art. No textures are cut from the posters, and none
+ * of this imitates a product photograph.
+ */
+
+/* Paper grain for light grounds, very low opacity. */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.18 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.metal {
+  background: var(--metal-brushed);
+}
+
+/*
+ * The flask: the silhouette of the Erlenmeyer flask in the Make My Perfume
+ * seal, used as the brand's window shape (neck, shoulders, wide base).
+ */
+.flask-mask {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'%3E%3Cpath d='M36 0h28a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-1v20c0 5 2 9 5 13l27 48c7 13-1 35-17 35H22C6 130-2 108 5 95l27-48c3-4 5-8 5-13V14h-1a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'%3E%3Cpath d='M36 0h28a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-1v20c0 5 2 9 5 13l27 48c7 13-1 35-17 35H22C6 130-2 108 5 95l27-48c3-4 5-8 5-13V14h-1a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+/* Arch-shouldered frame used for product cards (a softer flask shoulder). */
+.shoulder-mask {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125' preserveAspectRatio='none'%3E%3Cpath d='M34 0h32c5 0 8 3 8 8v4c0 4 3 7 7 7h3c9 0 16 7 16 16v74c0 9-7 16-16 16H16c-9 0-16-7-16-16V35c0-9 7-16 16-16h3c4 0 7-3 7-7V8c0-5 3-8 8-8z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125' preserveAspectRatio='none'%3E%3Cpath d='M34 0h32c5 0 8 3 8 8v4c0 4 3 7 7 7h3c9 0 16 7 16 16v74c0 9-7 16-16 16H16c-9 0-16-7-16-16V35c0-9 7-16 16-16h3c4 0 7-3 7-7V8c0-5 3-8 8-8z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}

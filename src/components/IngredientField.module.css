@@ -1,0 +1,20 @@
+.field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.item {
+  position: absolute;
+  color: var(--c-gold-text);
+  opacity: calc(0.45 + var(--depth) * 0.45);
+  transform: rotate(var(--turn)) scale(calc(0.8 + var(--depth) * 0.2));
+  /* Desktop depth: ingredients drift inward with the hero's exit (--p). */
+  translate: calc(var(--p, 0) * (50% - var(--depth) * 10%)) calc(var(--p, 0) * -40px);
+}
+
+@media (max-width: 960px) {
+  .item {
+    opacity: calc(0.35 + var(--depth) * 0.4);
+  }
+}

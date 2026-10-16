@@ -1,0 +1,140 @@
+.ring {
+  display: grid;
+  gap: var(--s-6);
+}
+
+.label {
+  justify-self: center;
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-6);
+}
+
+.scene {
+  width: 100%;
+}
+
+.list {
+  display: grid;
+  gap: var(--s-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The lists curve around the accord: middle items sit closer to it. */
+.left {
+  justify-items: end;
+}
+.left li:nth-child(2) {
+  margin-right: calc(var(--s-6) * -1);
+}
+.right {
+  justify-items: start;
+}
+.right li:nth-child(2) {
+  margin-left: calc(var(--s-6) * -1);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 3.5rem;
+  padding: var(--s-2) var(--s-5) var(--s-2) var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color var(--d-base) var(--ease-out),
+    background-color var(--d-base) var(--ease-out),
+    transform var(--d-base) var(--ease-out);
+}
+
+.left .link {
+  flex-direction: row-reverse;
+  padding: var(--s-2) var(--s-3) var(--s-2) var(--s-5);
+  text-align: right;
+}
+
+.link[data-active] {
+  border-color: var(--ink);
+}
+
+.glyph {
+  flex: none;
+  color: var(--c-gold-text);
+}
+
+.text {
+  display: grid;
+  line-height: 1.2;
+}
+
+.family {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scent {
+  color: var(--ink-soft);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-lg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .left .link:hover {
+    transform: translateX(-3px);
+  }
+  .right .link:hover {
+    transform: translateX(3px);
+  }
+}
+
+/* Phones: the accord above, all six families in a 2 × 3 grid below. */
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+  .scene {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: min(70%, 16rem);
+    justify-self: center;
+  }
+  .list,
+  .left,
+  .right {
+    justify-items: stretch;
+    gap: var(--s-3);
+  }
+  .left li:nth-child(2),
+  .right li:nth-child(2) {
+    margin: 0;
+  }
+  .link,
+  .left .link {
+    flex-direction: row;
+    padding: var(--s-2) var(--s-3);
+    text-align: left;
+    border-radius: var(--radius-frame);
+  }
+  .scent {
+    font-size: var(--t-base);
+  }
+}

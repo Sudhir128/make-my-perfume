@@ -1,0 +1,347 @@
+.drydown {
+  position: relative;
+}
+
+/* Linked mode: a tall track with a sticky stage. 2.6 viewports of travel. */
+.drydown[data-mode='linked'] {
+  height: 260vh;
+}
+
+.drydown[data-mode='linked'] .stage {
+  position: sticky;
+  top: 0;
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.drydown[data-mode='static'] .stage {
+  padding-block: var(--section);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: var(--s-8);
+}
+
+.copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-5);
+}
+
+.title {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+}
+
+.title em {
+  display: block;
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 42ch;
+  color: var(--ink-soft);
+}
+
+.chooser {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: var(--s-3);
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-size: var(--t-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--d-base) var(--ease-out),
+    border-color var(--d-base) var(--ease-out),
+    color var(--d-base) var(--ease-out);
+}
+
+/* The native radio stays in the accessibility tree; the pill is its label. */
+.chip input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.chip:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--c-noir);
+}
+
+.chip:has(input:focus-visible) {
+  outline: var(--focus-width) solid var(--focus);
+  outline-offset: var(--focus-offset);
+}
+
+.more {
+  color: var(--accent);
+  font-size: var(--t-sm);
+  text-underline-offset: 0.3em;
+  border-radius: var(--radius-small);
+}
+
+/* ── Visual: paper strip and the time line ────────────────────────────── */
+.visual {
+  display: grid;
+  grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr);
+  align-items: stretch;
+  gap: var(--s-7);
+  /* Scent switches cross-fade the registered colours. */
+  transition:
+    --glow 600ms var(--ease-out),
+    --mid 600ms var(--ease-out),
+    --deep 600ms var(--ease-out);
+}
+
+.strip {
+  position: relative;
+  min-height: 26rem;
+  overflow: hidden;
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(180deg, #fbf7ef, #efe6d6);
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+}
+
+.stain {
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  border-radius: 50%;
+  filter: blur(14px);
+  transition: opacity var(--d-slow) var(--ease-out);
+}
+
+/* Progress helpers, as numbers 0..1 (unset --p means 0). */
+.strip {
+  --lift: min(1, max(0, (var(--p, 0) - 0.15) * 2.5));
+  --bloom: min(1, max(0, (var(--p, 0) - 0.22) * 2.5));
+  --settle: min(1, max(0, (var(--p, 0) - 0.45) * 2.2));
+}
+
+/* Top notes lift away and fade. */
+.stainTop {
+  top: 2%;
+  height: 34%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--mid) 70%, var(--glow)), transparent);
+  opacity: calc(1 - var(--lift) * 0.85);
+  transform: translateY(calc(var(--lift) * -40px));
+}
+
+/* The heart blooms, then softens a little. */
+.stainHeart {
+  top: 30%;
+  height: 38%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--mid) 60%, var(--deep)), transparent);
+  opacity: calc(0.15 + var(--bloom) * 0.85 - min(1, max(0, (var(--p, 0) - 0.72) * 3)) * 0.35);
+  transform: scale(calc(0.9 + var(--bloom) * 0.15));
+}
+
+/* The base settles into place and stays. */
+.stainBase {
+  top: 58%;
+  height: 40%;
+  background: radial-gradient(closest-side, var(--deep), transparent);
+  opacity: calc(0.12 + var(--settle) * 0.85);
+  transform: translateY(calc((1 - var(--settle)) * -20px));
+}
+
+/* A few motes rising early in the pass. */
+.mote {
+  position: absolute;
+  left: calc(22% + var(--i) * 13%);
+  top: calc(24% - var(--i) * 3%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--deep);
+  opacity: calc((1 - min(1, max(0, var(--p, 0) * 3.2))) * 0.55);
+  transform: translateY(calc(var(--p, 0) * -180px - var(--i) * 6px));
+}
+
+/* Near the top, over the light top-note stain, so the label stays legible. */
+.stripLabel {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  translate: -50% 0;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  color: #5e554b;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--t-lg);
+  white-space: nowrap;
+  animation: fade-in 240ms var(--ease-out) both;
+}
+
+.stripLabel svg {
+  rotate: 90deg;
+}
+
+/* ── Time line: one rail that fills continuously ──────────────────────── */
+.timeline {
+  position: relative;
+  display: grid;
+  align-content: center;
+  padding-left: var(--s-6);
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.railFill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+}
+
+/* The marker's wrapper is as tall as the rail, so translating it by
+   p × 100% moves the dot exactly along the rail. */
+.railMarker {
+  position: absolute;
+  inset: 0;
+  transform: translateY(calc(var(--p, 0) * 100%));
+}
+
+.railMarker span {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.tiers {
+  display: grid;
+  gap: var(--s-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: fade-in 240ms var(--ease-out) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.tier {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.when {
+  color: var(--ink-soft);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  transition: color var(--d-slow) var(--ease-out);
+}
+
+.tierName {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  line-height: 1.1;
+  color: var(--ink-soft);
+  transition: color var(--d-slow) var(--ease-out);
+}
+
+.notes {
+  color: var(--ink-soft);
+  transition: color var(--d-slow) var(--ease-out);
+}
+
+/* Emphasis by colour, never by fading: every state stays readable. */
+.tier[data-state='active'] .when,
+.tier[data-state='shown'] .when {
+  color: var(--accent);
+}
+
+.tier[data-state='active'] .tierName,
+.tier[data-state='active'] .notes,
+.tier[data-state='shown'] .tierName,
+.tier[data-state='shown'] .notes {
+  color: var(--ink);
+}
+
+/* Static mode: all three layers at once, the rail full, no marker. */
+.drydown[data-mode='static'] .stain {
+  opacity: 0.85;
+  transform: none;
+}
+
+.drydown[data-mode='static'] .mote,
+.drydown[data-mode='static'] .railMarker {
+  display: none;
+}
+
+.drydown[data-mode='static'] .railFill {
+  transform: none;
+}
+
+@media (max-width: 899px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--s-7);
+  }
+  .visual {
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: var(--s-5);
+  }
+  .strip {
+    min-height: 18rem;
+  }
+  .timeline {
+    padding-left: var(--s-5);
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+
+# Scroll-Craft verification output (screenshots, contact sheets)
+scrollcraft/lab/
+
+# The supplied reel is excluded from this prototype (no video). The original
+# stays on disk untouched; it is simply kept out of the repository.
+Make my perfume/videos/

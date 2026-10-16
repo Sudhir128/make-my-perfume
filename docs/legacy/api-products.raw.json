@@ -1,0 +1,261 @@
+{
+  "source": "https://makemyperfume.vercel.app/api/products",
+  "retrieved": "2026-10-15",
+  "response": {
+    "items": [
+      {
+        "id": "p-citrus-noir",
+        "slug": "citrus-noir",
+        "name": "Citrus Noir",
+        "collection": "Fresh",
+        "tagline": "Brightness with a beautiful shadow.",
+        "description": "A luminous, mineral citrus that settles into a clean, confident trail. Made for first impressions that stay.",
+        "image_url": "https://images.unsplash.com/photo-1594913615593-e4b8c44625be?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1594913615593-e4b8c44625be?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1758871993077-e084cc7eca86?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 1200,
+        "compare_at_price": 1450,
+        "size_ml": 100,
+        "rating": 4.9,
+        "review_count": 128,
+        "badge": "Bestseller",
+        "top_notes": [
+          "Bergamot",
+          "Lemon",
+          "Sea salt"
+        ],
+        "heart_notes": [
+          "Lavender",
+          "Neroli",
+          "Mineral air"
+        ],
+        "base_notes": [
+          "Vetiver",
+          "Cedar",
+          "White musk"
+        ],
+        "longevity": "8–10 hours",
+        "sillage": "Moderate",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Limonene"
+        ]
+      },
+      {
+        "id": "p-amber-veil",
+        "slug": "amber-veil",
+        "name": "Amber Veil",
+        "collection": "Warm",
+        "tagline": "Soft light, held close.",
+        "description": "A warm amber veil woven with saffron and a touch of vanilla. Quietly magnetic, never loud.",
+        "image_url": "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 1490,
+        "compare_at_price": 1690,
+        "size_ml": 50,
+        "rating": 4.8,
+        "review_count": 86,
+        "badge": "New release",
+        "top_notes": [
+          "Saffron",
+          "Pink pepper",
+          "Pear"
+        ],
+        "heart_notes": [
+          "Jasmine",
+          "Amberwood",
+          "Rose"
+        ],
+        "base_notes": [
+          "Vanilla",
+          "Moss",
+          "Dry woods"
+        ],
+        "longevity": "7–9 hours",
+        "sillage": "Intimate",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Linalool"
+        ]
+      },
+      {
+        "id": "p-nocturne",
+        "slug": "nocturne",
+        "name": "Nocturne",
+        "collection": "Woody",
+        "tagline": "A darker kind of calm.",
+        "description": "Smoked woods and black tea on a polished skin scent. Composed for late rooms and long conversations.",
+        "image_url": "https://images.unsplash.com/photo-1643797517714-a273548abc3c?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1643797517714-a273548abc3c?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1758871993077-e084cc7eca86?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 1750,
+        "compare_at_price": 1990,
+        "size_ml": 100,
+        "rating": 4.7,
+        "review_count": 64,
+        "badge": "Unisex",
+        "top_notes": [
+          "Black tea",
+          "Cardamom",
+          "Bergamot"
+        ],
+        "heart_notes": [
+          "Iris",
+          "Suede",
+          "Incense"
+        ],
+        "base_notes": [
+          "Cedar",
+          "Patchouli",
+          "Tonka"
+        ],
+        "longevity": "9–11 hours",
+        "sillage": "Pronounced",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Citral"
+        ]
+      },
+      {
+        "id": "p-azure-skin",
+        "slug": "azure-skin",
+        "name": "Azure Skin",
+        "collection": "Aquatic",
+        "tagline": "The air after rain.",
+        "description": "Salted skin, crisp cypress and a cool blue horizon. An effortless everyday signature.",
+        "image_url": "https://images.unsplash.com/photo-1717852885839-166ce0621811?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1717852885839-166ce0621811?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1594913615593-e4b8c44625be?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 990,
+        "compare_at_price": 1190,
+        "size_ml": 50,
+        "rating": 4.6,
+        "review_count": 42,
+        "badge": null,
+        "top_notes": [
+          "Yuzu",
+          "Juniper",
+          "Marine accord"
+        ],
+        "heart_notes": [
+          "Cypress",
+          "Sage",
+          "Lotus"
+        ],
+        "base_notes": [
+          "Driftwood",
+          "Musk",
+          "Ambergris"
+        ],
+        "longevity": "6–8 hours",
+        "sillage": "Soft",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Geraniol"
+        ]
+      },
+      {
+        "id": "p-velvet-fig",
+        "slug": "velvet-fig",
+        "name": "Velvet Fig",
+        "collection": "Sweet",
+        "tagline": "A little green. A little undone.",
+        "description": "Ripe fig and creamy woods with a sheer floral lift. A modern gourmand with an editorial edge.",
+        "image_url": "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 1350,
+        "compare_at_price": 1590,
+        "size_ml": 50,
+        "rating": 4.8,
+        "review_count": 73,
+        "badge": "Staff pick",
+        "top_notes": [
+          "Fig leaf",
+          "Mandarin",
+          "Pear"
+        ],
+        "heart_notes": [
+          "Violet",
+          "Coconut milk",
+          "Orris"
+        ],
+        "base_notes": [
+          "Sandalwood",
+          "Benzoin",
+          "Musk"
+        ],
+        "longevity": "7–9 hours",
+        "sillage": "Moderate",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Benzyl salicylate"
+        ]
+      },
+      {
+        "id": "p-saffron-neroli",
+        "slug": "saffron-neroli",
+        "name": "Saffron Neroli",
+        "collection": "Floral",
+        "tagline": "Bright petals, warm skin.",
+        "description": "A radiant floral with neroli, saffron and creamy sandalwood. Polished, personal and easy to love.",
+        "image_url": "https://images.unsplash.com/photo-1758871993077-e084cc7eca86?auto=format&fit=crop&w=1000&q=85",
+        "gallery": [
+          "https://images.unsplash.com/photo-1758871993077-e084cc7eca86?auto=format&fit=crop&w=1000&q=85",
+          "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=1000&q=85"
+        ],
+        "price": 1100,
+        "compare_at_price": null,
+        "size_ml": 100,
+        "rating": 4.5,
+        "review_count": 31,
+        "badge": "Everyday",
+        "top_notes": [
+          "Neroli",
+          "Orange blossom",
+          "Lemon"
+        ],
+        "heart_notes": [
+          "Saffron",
+          "Tuberose",
+          "Ylang ylang"
+        ],
+        "base_notes": [
+          "Sandalwood",
+          "Musk",
+          "Cashmere wood"
+        ],
+        "longevity": "6–8 hours",
+        "sillage": "Moderate",
+        "ingredients": [
+          "Denatured alcohol",
+          "Parfum",
+          "Aqua",
+          "Citronellol"
+        ]
+      }
+    ],
+    "total": 6
+  }
+}

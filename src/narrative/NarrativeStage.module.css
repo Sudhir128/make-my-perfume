@@ -1,0 +1,38 @@
+/* Sticky, viewport-sized and taking no flow height: the stage blocks scroll
+   over it. Sits behind the content (z-index 0; content is z-index 1). */
+.stage {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  margin-bottom: -100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+
+/* Poster: the CSS flask in the same place as the 3D flask, until ready. */
+.poster {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  width: min(24vw, 22rem);
+  translate: -50% -46%;
+  transition: opacity 600ms var(--ease-out);
+}
+
+.stage[data-ready] .canvas {
+  opacity: 1;
+}
+
+.stage[data-ready] .poster {
+  opacity: 0;
+}

@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "source": "legacy-site",
+    "confirmed": false,
+    "retrieved": "2026-10-15",
+    "note": "Transcribed from the rendered legacy pages; line breaks joined. Where the legacy site set text in capitals, `text` keeps the original and `display` holds the sentence-case version used in the prototype. Items marked excluded must not be displayed until the business confirms them."
+  },
+  "about": {
+    "ref": "https://makemyperfume.vercel.app/about",
+    "items": [
+      { "key": "eyebrow", "text": "Our point of view", "use": "allowed" },
+      { "key": "heading", "text": "Made for the in-between.", "use": "allowed" },
+      { "key": "intro", "text": "Make My Perfume is an independent fragrance studio for people who find meaning in the small rituals.", "use": "allowed" },
+      { "key": "studioHeading", "text": "A little more considered.", "use": "allowed" },
+      { "key": "studioBody", "text": "We make fragrance in small batches, in India, with a belief that luxury should feel personal rather than precious. Each composition is built in layers: a bright first thought, a textured middle, and a base that stays close.", "use": "allowed" },
+      { "key": "studioBody2", "text": "Our bottles are designed to live on your shelf. Our formulas are vegan. Our approach is slow enough to notice the details.", "use": "excluded-pending-confirmation", "reason": "Contains the unverified claim \"Our formulas are vegan\"." },
+      { "key": "pillar1", "title": "Composed slowly", "body": "Balanced formulas with room to unfold on skin.", "use": "allowed" },
+      { "key": "pillar2", "title": "Made in India", "body": "Thoughtful batches, packed and sent from home.", "use": "allowed" },
+      { "key": "pillar3", "title": "Always personal", "body": "A scent wardrobe should sound like you.", "use": "allowed" }
+    ]
+  },
+  "contact": {
+    "ref": "https://makemyperfume.vercel.app/contact",
+    "items": [
+      { "key": "location", "text": "Bengaluru · India", "use": "excluded-pending-confirmation", "reason": "Unverified business location. Owner asked for a location-free footer until it is confirmed (Phase 1 approval)." },
+      { "key": "email", "text": "hello@makemyperfume.in", "use": "excluded-pending-confirmation", "reason": "No MX record found for makemyperfume.in on 2026-10-15." },
+      { "key": "phone", "text": "+91 98765 43210", "use": "excluded-pending-confirmation", "reason": "Matches a common placeholder pattern." }
+    ]
+  },
+  "home": {
+    "ref": "https://makemyperfume.vercel.app/",
+    "items": [
+      { "key": "personalize", "text": "A GIFT THAT LASTS A LIFETIME", "display": "A gift that lasts a lifetime", "use": "allowed" },
+      { "key": "testimonials", "text": "Three named customer quotes", "use": "excluded-pending-confirmation", "reason": "Unverifiable social proof." },
+      { "key": "freeShipping", "text": "Free shipping on orders above ₹599 across India", "use": "excluded-pending-confirmation", "reason": "Contradicts the ₹999 threshold in the policy text; shipping is out of scope." }
+    ]
+  },
+  "posterTaglines": {
+    "ref": "Make my perfume/posters (supplied brand assets)",
+    "items": [
+      { "key": "p1", "text": "Built to leave a mark.", "use": "allowed" },
+      { "key": "p2", "text": "Scent, in form.", "use": "allowed" },
+      { "key": "p3", "text": "Warmth that stays.", "use": "allowed" },
+      { "key": "p4", "text": "Depth has a signature.", "use": "allowed" },
+      { "key": "p5", "text": "Two moods. One signature.", "use": "allowed" },
+      { "key": "p6", "text": "Distinct by design.", "use": "allowed" },
+      { "key": "p7", "text": "Make it yours.", "use": "allowed" },
+      { "key": "p8", "text": "Your scent. Your signature.", "use": "allowed" }
+    ]
+  }
+}
