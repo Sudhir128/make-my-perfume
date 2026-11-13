@@ -160,8 +160,10 @@
 .dialog {
   /* The global margin reset removes the native modal's centring. */
   margin: auto;
-  width: min(calc(100% - 2 * var(--gutter)), 30rem);
-  padding: var(--s-7) var(--s-6) var(--s-6);
+  width: min(calc(100% - 2 * var(--gutter)), 40rem);
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
+  padding: var(--s-6);
   border: 0;
   border-radius: var(--radius-frame);
   background: var(--c-paper);
@@ -171,7 +173,6 @@
 
 .dialog[open] {
   display: grid;
-  justify-items: start;
   gap: var(--s-4);
 }
 
@@ -230,4 +231,313 @@
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
+}
+
+.checkoutForm {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+
+.field {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.field label,
+.legend {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-ink-dark-soft);
+}
+
+.field input {
+  min-height: 2.75rem;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--c-ink-dark-soft);
+  border-radius: var(--radius-small);
+  background: var(--c-paper);
+  color: var(--c-ink-dark);
+  font-size: var(--t-base);
+}
+
+.error {
+  color: var(--c-error);
+  font-size: var(--t-xs);
+}
+
+.paymentGroup {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: var(--s-2);
+}
+
+.paymentOptions {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.payCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  padding: var(--s-3);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-small);
+  background: var(--c-parchment);
+  cursor: pointer;
+}
+
+.payCard:has(input:checked) {
+  border-color: var(--c-ink-dark);
+  background: var(--c-paper);
+}
+
+.payCard div {
+  display: grid;
+  gap: 2px;
+  font-size: var(--t-sm);
+}
+
+.payCard span {
+  color: var(--c-ink-dark-soft);
+  font-size: var(--t-xs);
+}
+
+.upiBox {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: var(--s-4);
+  padding: var(--s-4);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-small);
+  background: var(--c-parchment);
+}
+
+.qrWrap {
+  background: var(--c-paper);
+  padding: var(--s-2);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-small);
+}
+
+.qrSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.upiDetails {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.upiTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+.vpaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.vpaRow code {
+  padding: 2px var(--s-2);
+  border-radius: 4px;
+  background: var(--c-paper);
+  font-size: var(--t-xs);
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px var(--s-2);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-pill);
+  background: var(--c-paper);
+  font-size: var(--t-xs);
+  cursor: pointer;
+}
+
+.upiAppLink {
+  font-size: var(--t-xs);
+  color: var(--c-gold-text);
+  justify-self: start;
+}
+
+.submitRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirmationCard {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 44rem;
+  padding: var(--s-7);
+  border-radius: var(--radius-frame);
+  background: var(--surface);
+  box-shadow: var(--e1);
+}
+
+.confirmMeta {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.emailNotice {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  font-size: var(--t-sm);
+}
+
+.invoiceBox {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+}
+
+.receiptItems {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-sm);
+}
+
+.receiptItems li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.receiptTotal {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+
+.receiptActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.receiptModal {
+  display: grid;
+  gap: var(--s-4);
+  justify-items: start;
+}
+
+.receiptIcon {
+  color: var(--c-gold-text);
+}
+
+.authTabs {
+  display: inline-flex;
+  gap: var(--s-2);
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+}
+
+.authTab,
+.authTabActive {
+  min-height: 2.25rem;
+  padding: 0 var(--s-4);
+  border: 0;
+  border-radius: calc(var(--radius-small) - 2px);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.authTab {
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.authTabActive {
+  background: var(--c-ink-dark);
+  color: var(--c-paper);
+}
+
+.authFields {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.authActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.switchAuthBtn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signedInBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  font-size: var(--t-xs);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 580px) {
+  .formGrid,
+  .upiBox {
+    grid-template-columns: 1fr;
+  }
 }

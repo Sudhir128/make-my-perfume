@@ -4,29 +4,38 @@ import { Menu, Search, ShoppingBag, UserRound, X } from 'lucide-react';
 import { useBag } from '../store/bag';
 import { itemCount } from '../lib/pricing';
 import { SealMark } from './SealMark';
+import { SearchOverlay } from './SearchOverlay';
 import styles from './SiteHeader.module.css';
 
-/** Category navigation, carried over from the previous site's header. */
+/** Target primary navigation requested by owner. */
 export const NAV = [
-  { to: '/', label: 'Home' },
-  { to: '/collection', label: 'Signature Perfume' },
-  { to: '/make', label: 'Personalized Perfume', highlight: true },
-  { to: '/collection?collection=cosmopolitan', label: 'Cosmopolitan' },
-  { to: '/collection?collection=fusion', label: 'Fusion' },
-  { to: '/collection?collection=combo', label: 'Combo Deals' },
-  { to: '/collection?collection=accessories', label: 'Accessories' },
-  { to: '/collection?collection=others', label: 'Others' },
+  { to: '/collection', label: 'Shop All Perfumes' },
+  { to: '/collection?audience=men', label: 'Men' },
+  { to: '/collection?audience=women', label: 'Women' },
+  { to: '/collection?audience=unisex', label: 'Unisex' },
+  { to: '/collection?type=inspired', label: 'Inspired Fragrances' },
+  { to: '/make', label: 'Create Your Perfume', highlight: true },
+  { to: '/collection?type=bundle', label: 'Gifting & Combos' },
 ] as const;
 
-/** Active only on an exact path + query match, so the /collection links stay distinct. */
+/** Active only on an exact path + category query match, so /collection links stay distinct. */
 function useIsCurrent() {
   const { pathname, search } = useLocation();
   return (to: string) => {
     const [path, query = ''] = to.split('?');
     if (path !== pathname) return false;
-    const want = new URLSearchParams(query).get('collection');
-    const have = new URLSearchParams(search).get('collection');
-    return want === have;
+    const want = new URLSearchParams(query);
+    const have = new URLSearchParams(search);
+    if (path === '/collection') {
+      const wantAudience = want.get('audience') ?? '';
+      const wantType = want.get('type') ?? '';
+      const wantCol = want.get('collection') ?? '';
+      const haveAudience = have.get('audience') ?? '';
+      const haveType = have.get('type') ?? '';
+      const haveCol = have.get('collection') ?? '';
+      return wantAudience === haveAudience && wantType === haveType && wantCol === haveCol;
+    }
+    return true;
   };
 }
 
@@ -59,13 +68,25 @@ function ProfileLink() {
   );
 }
 
-function SearchForm({ id, onDone }: { id: string; onDone?: () => void }) {
+function SearchForm({
+  id,
+  onDone,
+  onOpenOverlay,
+}: {
+  id: string;
+  onDone?: () => void;
+  onOpenOverlay?: (initialQ: string) => void;
+}) {
   const navigate = useNavigate();
   const [q, setQ] = useState('');
   const submit = (e: FormEvent) => {
     e.preventDefault();
     const term = q.trim();
-    navigate(term ? `/collection?q=${encodeURIComponent(term)}` : '/collection');
+    if (onOpenOverlay) {
+      onOpenOverlay(term);
+    } else {
+      navigate(term ? `/collection?q=${encodeURIComponent(term)}` : '/collection');
+    }
     onDone?.();
   };
   return (
@@ -81,7 +102,16 @@ function SearchForm({ id, onDone }: { id: string; onDone?: () => void }) {
         placeholder="Search by name or note"
         autoComplete="off"
         value={q}
-        onChange={(e) => setQ(e.target.value)}
+        onFocus={() => {
+          if (onOpenOverlay) onOpenOverlay(q);
+        }}
+        onClick={() => {
+          if (onOpenOverlay) onOpenOverlay(q);
+        }}
+        onChange={(e) => {
+          setQ(e.target.value);
+          if (onOpenOverlay) onOpenOverlay(e.target.value);
+        }}
       />
     </form>
   );
@@ -104,6 +134,8 @@ export function SiteHeader() {
   const dialog = useRef<HTMLDialogElement>(null);
   const header = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   // Compact bar once the full header has scrolled out of view (one observer).
   const [compact, setCompact] = useState(false);
   const location = useLocation();
@@ -118,7 +150,9 @@ export function SiteHeader() {
 
   // Close the menu whenever the route changes.
   useEffect(() => {
-    dialog.current?.close();
+    if (typeof dialog.current?.close === 'function') {
+      dialog.current.close();
+    }
   }, [location.pathname, location.search]);
 
   return (
@@ -138,9 +172,6 @@ export function SiteHeader() {
             >
               <Menu size={20} strokeWidth={1.5} aria-hidden="true" />
             </button>
-            <div className={styles.desktopSearch}>
-              <SearchForm id="header-search" />
-            </div>
           </div>
 
           <Link to="/" className={styles.brand} aria-label="Make My Perfume, home">
@@ -151,6 +182,17 @@ export function SiteHeader() {
           </Link>
 
           <div className={styles.actions}>
+            <button
+              type="button"
+              className={styles.iconLink}
+              aria-label="Search fragrances"
+              onClick={() => {
+                setSearchQuery('');
+                setSearchOpen(true);
+              }}
+            >
+              <Search size={19} strokeWidth={1.5} aria-hidden="true" />
+            </button>
             <ProfileLink />
             <BagLink />
           </div>
@@ -177,6 +219,17 @@ export function SiteHeader() {
             <SealMark size="sm" decorative />
           </Link>
           <div className={styles.compactActions}>
+            <button
+              type="button"
+              className={styles.iconLink}
+              aria-label="Search fragrances"
+              onClick={() => {
+                setSearchQuery('');
+                setSearchOpen(true);
+              }}
+            >
+              <Search size={19} strokeWidth={1.5} aria-hidden="true" />
+            </button>
             <ProfileLink />
             <BagLink />
           </div>
@@ -213,8 +266,22 @@ export function SiteHeader() {
             </li>
           </ul>
         </nav>
-        <SearchForm id="menu-search" onDone={() => dialog.current?.close()} />
+        <SearchForm
+          id="menu-search"
+          onDone={() => dialog.current?.close()}
+          onOpenOverlay={(q) => {
+            dialog.current?.close();
+            setSearchQuery(q);
+            setSearchOpen(true);
+          }}
+        />
       </dialog>
+
+      <SearchOverlay
+        open={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        initialQuery={searchQuery}
+      />
     </header>
   );
 }

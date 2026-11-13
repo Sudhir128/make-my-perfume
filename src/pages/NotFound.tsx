@@ -4,7 +4,7 @@ import { ImageryPending } from '../components/ImageryPending';
 import styles from './NotFound.module.css';
 
 // Pages that are linked from the site but not built yet.
-const PLANNED = ['/make', '/about', '/contact', '/careers', '/news', '/faqs', '/track-order', '/store-locator'];
+const PLANNED = ['/about', '/contact', '/careers', '/news', '/faqs', '/track-order', '/store-locator'];
 
 export default function NotFound() {
   const { pathname } = useLocation();

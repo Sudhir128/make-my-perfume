@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLoaderData, useNavigate, type LoaderFunctionArgs } from 'react-router';
 import { ChevronRight, ShoppingBag, Zap } from 'lucide-react';
-import { TIERS, type Product as ProductT } from '../data/catalog';
+import { trackSiteActivity } from '../data/activity';
+import { TIERS, type Product as ProductT, type Variant } from '../data/catalog';
 import { productImage } from '../data/productImages';
 import { getProduct, listProducts } from '../data/repository';
 import { formatINR } from '../lib/format';
@@ -65,15 +66,43 @@ export default function Product() {
   const photo = product ? productImage(product.slug) : null;
   const views: View[] = photo ? ['Photo', ...ART_VIEWS] : [...ART_VIEWS];
   const [view, setView] = useState<View>(photo ? 'Photo' : 'Artwork');
+  const variants: Variant[] = product?.variants?.length
+    ? product.variants
+    : product
+      ? [{ sku: product.sku ?? `${product.slug.toUpperCase()}-${product.sizeMl}`, sizeMl: product.sizeMl, price: product.price, availability: product.availability }]
+      : [];
+  const defaultVariant = variants.find((v) => v.sizeMl === product?.sizeMl) ?? variants[0];
+  const [selectedSize, setSelectedSize] = useState<number>(defaultVariant?.sizeMl ?? product?.sizeMl ?? 50);
   const [qty, setQty] = useState(1);
   const addProduct = useBag((s) => s.addProduct);
   const show = useToast((s) => s.show);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (product) {
+      setSelectedSize(defaultVariant?.sizeMl ?? product.sizeMl);
+      trackSiteActivity('product.viewed', 'product', product.slug, `Viewed ${product.name}`);
+    }
+  }, [product?.slug]);
+
   if (!product) return <NotFound />;
 
+  const activeVariant = variants.find((v) => v.sizeMl === selectedSize) ?? defaultVariant ?? variants[0]!;
+  const activePrice = activeVariant?.price ?? product.price;
+  const activeSize = activeVariant?.sizeMl ?? product.sizeMl;
+  const activeSale = activeVariant?.sale;
+  const outOfStock = (activeVariant?.availability ?? product.availability) === 'out_of_stock';
+
+  const selectedProduct: ProductT = {
+    ...product,
+    price: activePrice,
+    sizeMl: activeSize,
+    sku: activeVariant?.sku ?? product.sku,
+  };
+
   const add = () => {
-    addProduct(product, qty);
+    addProduct(selectedProduct, qty);
+    trackSiteActivity('bag.item_added', 'product', product.slug, `Added ${qty} × ${product.name} (${activeSize} ml) to bag`);
     show(`${qty} × ${product.name} added to your bag.`, { label: 'View bag', to: '/bag' });
   };
 
@@ -135,32 +164,57 @@ export default function Product() {
           <div className={styles.priceBlock}>
             <p className={styles.price}>
               <span className="visually-hidden">Price </span>
-              <span className="tabular">{formatINR(product.price)}</span>
+              <span className="tabular">{formatINR(activePrice)}</span>
             </p>
-            <p className={styles.perSize}>for {product.sizeMl} ml</p>
+            {activeSale && (
+              <s className={`${styles.compareAt} tabular`}>
+                <span className="visually-hidden">Was </span>
+                {formatINR(activeSale.compareAt)}
+              </s>
+            )}
+            <p className={styles.perSize}>for {activeSize} ml</p>
           </div>
 
           <div className={styles.option}>
             <p className={styles.optionLabel} id="size-label">
               Size
             </p>
-            <p className={styles.sizeChip} aria-labelledby="size-label">
-              {product.sizeMl} ml
-            </p>
+            {variants.length > 1 ? (
+              <div className={styles.sizeRow} role="radiogroup" aria-labelledby="size-label">
+                {variants.map((v) => (
+                  <button
+                    key={v.sku}
+                    type="button"
+                    role="radio"
+                    aria-checked={v.sizeMl === activeSize}
+                    className={styles.sizeOption}
+                    onClick={() => setSelectedSize(v.sizeMl)}
+                  >
+                    {v.sizeMl} ml
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className={styles.sizeChip} aria-labelledby="size-label">
+                {activeSize} ml
+              </p>
+            )}
           </div>
 
           <div className={styles.buy}>
             <QuantityStepper value={qty} onChange={(n) => setQty(Math.min(10, Math.max(1, n)))} label={product.name} />
-            <Button className={styles.addButton} onClick={add}>
+            <Button className={styles.addButton} onClick={add} disabled={outOfStock}>
               <ShoppingBag size={17} strokeWidth={1.5} aria-hidden="true" />
-              Add to bag
+              {outOfStock ? 'Out of stock' : 'Add to bag'}
             </Button>
           </div>
           <Button
             variant="ghost"
             className={styles.buyNow}
+            disabled={outOfStock}
             onClick={() => {
-              addProduct(product, qty);
+              addProduct(selectedProduct, qty);
+              trackSiteActivity('bag.item_added', 'product', product.slug, `Buy now ${qty} × ${product.name} (${activeSize} ml)`);
               navigate('/bag');
             }}
           >

@@ -4,11 +4,26 @@ export type Tier = 'top' | 'heart' | 'base';
 export const TIERS: readonly Tier[] = ['top', 'heart', 'base'];
 
 export interface Provenance {
-  source: 'legacy-site';
+  source: 'legacy-site' | 'supabase';
   confirmed: boolean;
   ref: string;
   retrieved: string;
 }
+
+/** A bottle size with its own SKU and price. Present on catalogue-managed products. */
+export interface Variant {
+  id?: string;
+  sku: string;
+  sizeMl: number;
+  /** INR selling price. */
+  price: number;
+  availability?: AvailabilityStatus;
+  /** Set only while an approved promotion is active (from v_active_sales). */
+  sale?: { compareAt: number; discountPct: number };
+}
+
+export type Audience = 'men' | 'women' | 'unisex';
+export type AvailabilityStatus = 'in_stock' | 'low_stock' | 'out_of_stock' | 'preorder';
 
 export interface Product {
   id: string;
@@ -26,6 +41,29 @@ export interface Product {
   longevity?: string;
   ingredients?: string[];
   provenance: Provenance;
+  /* Catalogue-managed products (Supabase) add the fields below. */
+  audience?: Audience;
+  /** Product types from its categories: 'inspired', 'bundle', etc. */
+  types?: string[];
+  /** Category slugs this product belongs to. */
+  categorySlugs?: string[];
+  /** Verified scent families; a product may carry several. */
+  families?: string[];
+  /** Fragrance type display name & slug (e.g. 'Eau de Parfum', 'eau-de-parfum'). */
+  fragranceType?: string;
+  fragranceTypeSlug?: string;
+  /** Merchandising flags controlled from Admin Portal. */
+  isFeatured?: boolean;
+  isTrending?: boolean;
+  isSignature?: boolean;
+  isBestSeller?: boolean;
+  popularityScore?: number;
+  availability?: AvailabilityStatus;
+  sku?: string;
+  /** Every bottle size. price / sizeMl describe the lowest-priced one. */
+  variants?: Variant[];
+  /** ISO time the product was published. */
+  publishedAt?: string;
 }
 
 export interface Note {

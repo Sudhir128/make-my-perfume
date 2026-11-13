@@ -2,7 +2,8 @@ import { useMemo, useRef, useState } from 'react';
 import { NarrativeStage } from '../narrative/NarrativeStage';
 import { Link, useLoaderData } from 'react-router';
 import type { Product } from '../data/catalog';
-import { listFamilies, listProducts } from '../data/repository';
+import type { CarouselItem } from '../data/selections';
+import { listFamilies, listHomepageCarousels, listProducts } from '../data/repository';
 import { useNarrativeTier } from '../narrative/useNarrativeTier';
 import { Botanical } from '../components/Botanical';
 import { BottlePreview } from '../components/BottlePreview';
@@ -15,6 +16,7 @@ import { ImageryPending } from '../components/ImageryPending';
 import { IngredientField } from '../components/IngredientField';
 import { MistField } from '../components/MistField';
 import { ProductCard } from '../components/ProductCard';
+import { ProductCarousel } from '../components/ProductCarousel';
 import { Reveal } from '../components/Reveal';
 import { useMedia, useScrollProgress } from '../scroll/useScrollProgress';
 import sunflowers800 from '../assets/editorial/sunflowers-800.webp';
@@ -24,8 +26,8 @@ import spray1400 from '../assets/editorial/spray-still-life-1400.webp';
 import styles from './Home.module.css';
 
 export async function loader() {
-  const [products, families] = await Promise.all([listProducts(), listFamilies()]);
-  return { products, families };
+  const [products, families, carousels] = await Promise.all([listProducts(), listFamilies(), listHomepageCarousels()]);
+  return { products, families, carousels };
 }
 
 const NAME_MAX = 18;
@@ -46,8 +48,18 @@ const FAMILY_MOOD: Record<string, string> = {
  * `[data-scene-slot]` holds the static composition instead.
  */
 export default function Home() {
-  const { products, families } = useLoaderData() as { products: Product[]; families: string[] };
+  const { products, families, carousels } = useLoaderData() as {
+    products: Product[];
+    families: string[];
+    carousels: {
+      trending: CarouselItem[];
+      newArrivals: CarouselItem[];
+      signature: CarouselItem[];
+      onSale: CarouselItem[];
+    };
+  };
   const [name, setName] = useState('');
+  const [carouselTab, setCarouselTab] = useState<'trending' | 'newArrivals' | 'onSale' | 'signature'>('trending');
   const { tier, fail } = useNarrativeTier();
   const sequence = useRef<HTMLDivElement>(null);
 
@@ -60,6 +72,54 @@ export default function Home() {
     () => families.map((family) => ({ family, scent: products.find((p) => p.collection === family)?.name ?? '' })),
     [families, products],
   );
+
+  const carouselTabs = useMemo(
+    () => [
+      { id: 'trending', label: 'Trending', count: carousels.trending.length },
+      { id: 'newArrivals', label: 'New Arrivals', count: carousels.newArrivals.length },
+      ...(carousels.onSale.length > 0 ? [{ id: 'onSale', label: 'On Sale', count: carousels.onSale.length }] : []),
+      { id: 'signature', label: 'Signature', count: carousels.signature.length },
+    ],
+    [carousels],
+  );
+
+  const activeCarousel = useMemo(() => {
+    switch (carouselTab) {
+      case 'newArrivals':
+        return {
+          eyebrow: 'Just bottled',
+          title: 'New',
+          accentWord: 'arrivals.',
+          items: carousels.newArrivals,
+          viewAllTo: '/collection?sort=newest',
+        };
+      case 'onSale':
+        return {
+          eyebrow: 'Special promotions',
+          title: 'On',
+          accentWord: 'sale.',
+          items: carousels.onSale,
+          viewAllTo: '/collection?sort=price-asc',
+        };
+      case 'signature':
+        return {
+          eyebrow: 'House editions',
+          title: 'Signature',
+          accentWord: 'perfumes.',
+          items: carousels.signature,
+          viewAllTo: '/collection?sort=featured',
+        };
+      case 'trending':
+      default:
+        return {
+          eyebrow: 'Most loved right now',
+          title: 'Trending',
+          accentWord: 'perfumes.',
+          items: carousels.trending,
+          viewAllTo: '/collection?sort=popularity',
+        };
+    }
+  }, [carouselTab, carousels]);
 
   // Stage 3: the bottle takes the light of the card at the centre of the screen.
   const cards = useRef<HTMLUListElement>(null);
@@ -226,6 +286,67 @@ export default function Home() {
           ))}
         </ul>
       </section>
+
+      {/* ── Featured Multi-Collection Carousel (Trending, New Arrivals, Sale) ── */}
+      <ProductCarousel
+        eyebrow={activeCarousel.eyebrow}
+        title={activeCarousel.title}
+        accentWord={activeCarousel.accentWord}
+        items={activeCarousel.items}
+        viewAllTo={activeCarousel.viewAllTo}
+        tabs={carouselTabs}
+        activeTab={carouselTab}
+        onTabChange={(id) => setCarouselTab(id as any)}
+      />
+
+      {/* ── Trending Fragrances Showcase (prominently displayed) ────── */}
+      <section className={`${styles.trendingSection} page-width`} aria-labelledby="trending-title">
+        <Reveal as="header" className={styles.sectionHeadRow}>
+          <div>
+            <p className="eyebrow eyebrow--lead">In High Demand</p>
+            <h2 id="trending-title" className={styles.h2}>
+              Trending <em>perfumes.</em>
+            </h2>
+          </div>
+          <ButtonLink to="/collection?sort=popularity" variant="quiet" arrow>
+            View all trending
+          </ButtonLink>
+        </Reveal>
+        <ul className={styles.bestGrid}>
+          {carousels.trending.slice(0, 4).map((item) => (
+            <li key={`trending-grid-${item.product.slug}`}>
+              <ProductCard product={item.product} variant={item.variant} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── Dedicated Arrivals & Sale Carousels ──────────────────────── */}
+      <ProductCarousel
+        eyebrow="Just bottled"
+        title="New"
+        accentWord="arrivals."
+        items={carousels.newArrivals}
+        viewAllTo="/collection?sort=newest"
+      />
+
+      {carousels.onSale.length > 0 && (
+        <ProductCarousel
+          eyebrow="Special offer"
+          title="On"
+          accentWord="sale."
+          items={carousels.onSale}
+          viewAllTo="/collection?sort=price-asc"
+        />
+      )}
+
+      <ProductCarousel
+        eyebrow="House editions"
+        title="Signature"
+        accentWord="perfumes."
+        items={carousels.signature}
+        viewAllTo="/collection?sort=featured"
+      />
 
       {/* ── Best sellers ─────────────────────────────────────────────── */}
       <section className={`${styles.bestSellers} page-width`} aria-labelledby="best-title">

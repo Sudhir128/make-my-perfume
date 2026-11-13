@@ -83,6 +83,9 @@ export function SiteFooter() {
       </div>
       <div className={styles.bottom}>
         <span>© 2026 Make My Perfume</span>
+        <Link to="/admin" className={styles.adminBottomLink}>
+          Admin Portal Login
+        </Link>
         <a href={`mailto:${EMAIL}`} className={styles.email}>
           {EMAIL} <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
         </a>

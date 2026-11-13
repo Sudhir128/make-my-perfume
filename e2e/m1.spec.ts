@@ -31,7 +31,26 @@ for (const vp of VIEWPORTS) {
           await page.goto(route.path);
           await expect(page.getByRole('heading', { level: 1, name: route.heading })).toBeVisible();
           await settle(page);
-          expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), 'horizontal overflow').toBeLessThanOrEqual(0);
+          const overflowInfo = await page.evaluate(() => {
+            const diff = document.documentElement.scrollWidth - window.innerWidth;
+            if (diff <= 0) return { diff, offenders: [] as string[] };
+            const isClippedByAncestor = (el: Element) => {
+              for (let p = el.parentElement; p && p !== document.documentElement && p !== document.body; p = p.parentElement) {
+                const ox = getComputedStyle(p).overflowX;
+                if (ox === 'auto' || ox === 'hidden' || ox === 'scroll' || ox === 'clip') return true;
+              }
+              return false;
+            };
+            const offenders: string[] = [];
+            for (const el of document.querySelectorAll('*')) {
+              const r = el.getBoundingClientRect();
+              if (r.right > window.innerWidth + 1 && !isClippedByAncestor(el)) {
+                offenders.push(`${el.tagName}.${el.className} right=${Math.round(r.right)} w=${Math.round(r.width)}`);
+              }
+            }
+            return { diff, offenders: offenders.slice(0, 12) };
+          });
+          expect(overflowInfo.diff, `horizontal overflow: ${overflowInfo.offenders.join(' | ')}`).toBeLessThanOrEqual(0);
           const families = await page.evaluate(() =>
             [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family.replace(/["']/g, '')),
           );
@@ -171,7 +190,7 @@ test.describe('mobile menu', () => {
     await expect(dialog).toBeHidden();
     await expect(open).toBeFocused();
     await open.click();
-    await dialog.getByRole('link', { name: 'Signature Perfume' }).click();
+    await dialog.getByRole('link', { name: 'Shop All Perfumes' }).click();
     await expect(page).toHaveURL(/\/collection$/);
     await expect(dialog).toBeHidden();
   });

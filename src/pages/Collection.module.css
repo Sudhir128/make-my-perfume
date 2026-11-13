@@ -41,15 +41,53 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
-  margin-top: var(--s-6);
+  margin-top: 0;
+}
+
+.toolbarLeft {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  flex: 1 1 20rem;
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 3rem;
+  padding: 0 var(--s-5);
+  border: 1px solid var(--c-ink-dark-soft);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color var(--d-base) var(--ease-out),
+    background-color var(--d-base) var(--ease-out),
+    transform var(--d-fast) var(--ease-out);
+}
+
+.filterBtn:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .filterBtn:hover {
+    border-color: var(--ink);
+    background: var(--bg-alt);
+  }
 }
 
 .search {
   position: relative;
   display: flex;
   align-items: center;
-  flex: 1 1 18rem;
-  max-width: 28rem;
+  flex: 1 1 16rem;
+  max-width: 26rem;
 }
 
 .search input {
@@ -150,6 +188,41 @@
 
 .chip[aria-pressed='true'] svg {
   color: currentColor;
+}
+
+.activeBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+}
+
+.activePill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 2.25rem;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--bg-alt);
+  color: var(--ink);
+  font-size: var(--t-xs);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.clearInline {
+  min-height: 2.25rem;
+  padding: 0 var(--s-2);
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .count {

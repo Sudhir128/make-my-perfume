@@ -1,0 +1,1018 @@
+{
+  "source_file": "Make_My_Perfume_Website_Catalog_Instagram_Audit_2026-11-10.xlsx",
+  "sha256": "35c493c9fb292fa259dd76834b47da05122ee1a9d3d728fd7fc3d85106b165c2",
+  "parents": [
+    {
+      "product_key": "src-page-giorgio-armani-acqua-di-gio",
+      "source_title": "GIORGIO ARMANI ACQUA DI GIO",
+      "normalized_title": "Giorgio Armani Acqua di Gio",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-150ml/136",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 4,
+          "sku": "MMP-C556F8-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 3,
+          "sku": "MMP-C556F8-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 2,
+          "sku": "MMP-C556F8-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profumo",
+      "source_title": "GIORGIO ARMANI ACQUA DI GIO PROFUMO",
+      "normalized_title": "Giorgio Armani Acqua di Gio Profumo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profumo-150ml/133",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 7,
+          "sku": "MMP-623E29-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 6,
+          "sku": "MMP-623E29-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 5,
+          "sku": "MMP-623E29-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profundo",
+      "source_title": "GIORGIO ARMANI ACQUA DI GIO PROFUNDO",
+      "normalized_title": "Giorgio Armani Acqua di Gio Profundo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profundo-150ml/130",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 10,
+          "sku": "MMP-861B5D-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 9,
+          "sku": "MMP-861B5D-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 8,
+          "sku": "MMP-861B5D-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-absolu",
+      "source_title": "GIORGIO ARMANI ACQUA DI GIO ABSOLU",
+      "normalized_title": "Giorgio Armani Acqua di Gio Absolu",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-absolu-150ml/127",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 13,
+          "sku": "MMP-781E4A-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 12,
+          "sku": "MMP-781E4A-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 11,
+          "sku": "MMP-781E4A-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-stronger-with-you",
+      "source_title": "GIORGIO ARMANI STRONGER WITH YOU",
+      "normalized_title": "Giorgio Armani Stronger With You",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-stronger-with-you-150ml/124",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 16,
+          "sku": "MMP-565B58-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 15,
+          "sku": "MMP-565B58-100",
+          "size_ml": 100,
+          "price_inr": 1199
+        },
+        {
+          "row": 14,
+          "sku": "MMP-565B58-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-code-perfume",
+      "source_title": "GIORGIO ARMANI CODE PERFUME",
+      "normalized_title": "Giorgio Armani Code Perfume",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-code-perfume-150ml/121",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 19,
+          "sku": "MMP-8FB0FB-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 18,
+          "sku": "MMP-8FB0FB-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 17,
+          "sku": "MMP-8FB0FB-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-giorgio-armani-armani-prive-oud-royal",
+      "source_title": "GIORGIO ARMANI ARMANI PRIVE OUD ROYAL",
+      "normalized_title": "Giorgio Armani Armani Prive Oud Royal",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-armani-prive-oud-royal-150ml/118",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 22,
+          "sku": "MMP-B8A51E-50",
+          "size_ml": 50,
+          "price_inr": 1000
+        },
+        {
+          "row": 21,
+          "sku": "MMP-B8A51E-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 20,
+          "sku": "MMP-B8A51E-150",
+          "size_ml": 150,
+          "price_inr": 1499
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-givenchy-givenchy-pour-homme-blue-label",
+      "source_title": "GIVENCHY GIVENCHY POUR HOMME BLUE LABEL",
+      "normalized_title": "Givenchy Pour Homme Blue Label",
+      "source_url": "https://www.makemyperfumestore.com/products/givenchy-givenchy-pour-homme-blue-label-150ml/115",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 24,
+          "sku": "MMP-69E353-100",
+          "size_ml": 100,
+          "price_inr": 1198
+        },
+        {
+          "row": 23,
+          "sku": "MMP-69E353-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-cat-azzaro-chrome-eau-de-parfum",
+      "source_title": "AZZARO Chrome Eau de parfum",
+      "normalized_title": "AZZARO Chrome Eau de parfum",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro-chrome-eau-de-parfum/1",
+      "identity": "category_page",
+      "variants": [
+        {
+          "row": 27,
+          "sku": "MMP-83EF01-50",
+          "size_ml": 50,
+          "price_inr": 300
+        },
+        {
+          "row": 26,
+          "sku": "MMP-83EF01-100",
+          "size_ml": 100,
+          "price_inr": 600
+        },
+        {
+          "row": 25,
+          "sku": "MMP-83EF01-150",
+          "size_ml": 150,
+          "price_inr": 1200
+        }
+      ]
+    },
+    {
+      "product_key": "src-cat-azzaro",
+      "source_title": "AZZARO",
+      "normalized_title": "Azzaro",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro/1",
+      "identity": "category_page",
+      "variants": [
+        {
+          "row": 30,
+          "sku": "MMP-0D9B10-50",
+          "size_ml": 50,
+          "price_inr": 500
+        },
+        {
+          "row": 29,
+          "sku": "MMP-0D9B10-100",
+          "size_ml": 100,
+          "price_inr": 1000
+        },
+        {
+          "row": 28,
+          "sku": "MMP-0D9B10-150",
+          "size_ml": 150,
+          "price_inr": 1500
+        }
+      ]
+    },
+    {
+      "product_key": "src-cat-bulgari-bvlgari-aqua-pour-homme-atlantiqve",
+      "source_title": "BULGARI BVLGARI Aqua Pour Homme Atlantiqve",
+      "normalized_title": "BULGARI BVLGARI Aqua Pour Homme Atlantiqve",
+      "source_url": "https://www.makemyperfumestore.com/products/category/bulgari-bvlgari-aqua-pour-homme-atlantiqve/1",
+      "identity": "category_page",
+      "variants": [
+        {
+          "row": 33,
+          "sku": "MMP-E8C83D-50",
+          "size_ml": 50,
+          "price_inr": 600
+        },
+        {
+          "row": 32,
+          "sku": "MMP-E8C83D-100",
+          "size_ml": 100,
+          "price_inr": 1200
+        },
+        {
+          "row": 31,
+          "sku": "MMP-E8C83D-150",
+          "size_ml": 150,
+          "price_inr": 1800
+        }
+      ]
+    },
+    {
+      "product_key": "src-cat-1-million-lucky",
+      "source_title": "1 MILLION LUCKY",
+      "normalized_title": "1 Million Lucky",
+      "source_url": "https://www.makemyperfumestore.com/products/category/1-million-lucky-100-ml/1",
+      "identity": "category_page",
+      "variants": [
+        {
+          "row": 34,
+          "sku": "MMP-FA007E-100",
+          "size_ml": 100,
+          "price_inr": 1500
+        },
+        {
+          "row": 35,
+          "sku": "MMP-FA007E-150",
+          "size_ml": 150,
+          "price_inr": 1700
+        }
+      ]
+    },
+    {
+      "product_key": "src-page-prada-i-homme",
+      "source_title": "PRADA I HOMME",
+      "normalized_title": "Prada I Homme",
+      "source_url": "https://www.makemyperfumestore.com/products/prada-i-homme-50-ml/15",
+      "identity": "product_page",
+      "variants": [
+        {
+          "row": 37,
+          "sku": "MMP-210234-50",
+          "size_ml": 50,
+          "price_inr": 500
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "name": "GIORGIO ARMANI ACQUA DI GIO",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-150ml/136",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-C556F8-150"
+    },
+    {
+      "row": 3,
+      "name": "GIORGIO ARMANI ACQUA DI GIO",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-100ml/135",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-C556F8-100"
+    },
+    {
+      "row": 4,
+      "name": "GIORGIO ARMANI ACQUA DI GIO",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-50ml/134",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-C556F8-50"
+    },
+    {
+      "row": 5,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUMO",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profumo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profumo-150ml/133",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-623E29-150"
+    },
+    {
+      "row": 6,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUMO",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profumo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profumo-100ml/132",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-623E29-100"
+    },
+    {
+      "row": 7,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUMO",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profumo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profumo-50ml/131",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-623E29-50"
+    },
+    {
+      "row": 8,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUNDO",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profundo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profundo-150ml/130",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-861B5D-150"
+    },
+    {
+      "row": 9,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUNDO",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profundo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profundo-100ml/129",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-861B5D-100"
+    },
+    {
+      "row": 10,
+      "name": "GIORGIO ARMANI ACQUA DI GIO PROFUNDO",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-profundo",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-profundo-50ml/128",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-861B5D-50"
+    },
+    {
+      "row": 11,
+      "name": "GIORGIO ARMANI ACQUA DI GIO ABSOLU",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-absolu",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-absolu-150ml/127",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-781E4A-150"
+    },
+    {
+      "row": 12,
+      "name": "GIORGIO ARMANI ACQUA DI GIO ABSOLU",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-absolu",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-absolu-100ml/126",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-781E4A-100"
+    },
+    {
+      "row": 13,
+      "name": "GIORGIO ARMANI ACQUA DI GIO ABSOLU",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-acqua-di-gio-absolu",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-acqua-di-gio-absolu-50ml/125",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-781E4A-50"
+    },
+    {
+      "row": 14,
+      "name": "GIORGIO ARMANI STRONGER WITH YOU",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-stronger-with-you",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-stronger-with-you-150ml/124",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-565B58-150"
+    },
+    {
+      "row": 15,
+      "name": "GIORGIO ARMANI STRONGER WITH YOU",
+      "size_ml": 100,
+      "price_inr": 1199,
+      "product_key": "src-page-giorgio-armani-stronger-with-you",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-stronger-with-you-100ml/123",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-565B58-100"
+    },
+    {
+      "row": 16,
+      "name": "GIORGIO ARMANI STRONGER WITH YOU",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-stronger-with-you",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-stronger-with-you-50ml/122",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-565B58-50"
+    },
+    {
+      "row": 17,
+      "name": "GIORGIO ARMANI CODE PERFUME",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-giorgio-armani-code-perfume",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-code-perfume-150ml/121",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-8FB0FB-150"
+    },
+    {
+      "row": 18,
+      "name": "GIORGIO ARMANI CODE PERFUME",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-code-perfume",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-code-perfume-100ml/120",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-8FB0FB-100"
+    },
+    {
+      "row": 19,
+      "name": "GIORGIO ARMANI CODE PERFUME",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-code-perfume",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-code-perfume-50ml/119",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-8FB0FB-50"
+    },
+    {
+      "row": 20,
+      "name": "GIORGIO ARMANI ARMANI PRIVE OUD ROYAL",
+      "size_ml": 150,
+      "price_inr": 1499,
+      "product_key": "src-page-giorgio-armani-armani-prive-oud-royal",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-armani-prive-oud-royal-150ml/118",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-B8A51E-150"
+    },
+    {
+      "row": 21,
+      "name": "GIORGIO ARMANI ARMANI PRIVE OUD ROYAL",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-page-giorgio-armani-armani-prive-oud-royal",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-armani-prive-oud-royal-100ml/117",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-B8A51E-100"
+    },
+    {
+      "row": 22,
+      "name": "GIORGIO ARMANI ARMANI PRIVE OUD ROYAL",
+      "size_ml": 50,
+      "price_inr": 1000,
+      "product_key": "src-page-giorgio-armani-armani-prive-oud-royal",
+      "source_url": "https://www.makemyperfumestore.com/products/giorgio-armani-armani-prive-oud-royal-50ml/116",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-B8A51E-50"
+    },
+    {
+      "row": 23,
+      "name": "GIVENCHY GIVENCHY POUR HOMME BLUE LABEL",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-page-givenchy-givenchy-pour-homme-blue-label",
+      "source_url": "https://www.makemyperfumestore.com/products/givenchy-givenchy-pour-homme-blue-label-150ml/115",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-69E353-150"
+    },
+    {
+      "row": 24,
+      "name": "GIVENCHY GIVENCHY POUR HOMME BLUE LABEL",
+      "size_ml": 100,
+      "price_inr": 1198,
+      "product_key": "src-page-givenchy-givenchy-pour-homme-blue-label",
+      "source_url": "https://www.makemyperfumestore.com/products/givenchy-givenchy-pour-homme-blue-label-100ml/114",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Category grouping derived from product title; not verified as official site category"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-69E353-100"
+    },
+    {
+      "row": 25,
+      "name": "AZZARO Chrome Eau de parfum",
+      "size_ml": 150,
+      "price_inr": 1200,
+      "product_key": "src-cat-azzaro-chrome-eau-de-parfum",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro-chrome-eau-de-parfum/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-83EF01-150"
+    },
+    {
+      "row": 26,
+      "name": "AZZARO Chrome Eau de parfum",
+      "size_ml": 100,
+      "price_inr": 600,
+      "product_key": "src-cat-azzaro-chrome-eau-de-parfum",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro-chrome-eau-de-parfum/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-83EF01-100"
+    },
+    {
+      "row": 27,
+      "name": "AZZARO Chrome Eau de parfum",
+      "size_ml": 50,
+      "price_inr": 300,
+      "product_key": "src-cat-azzaro-chrome-eau-de-parfum",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro-chrome-eau-de-parfum/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-83EF01-50"
+    },
+    {
+      "row": 28,
+      "name": "AZZARO",
+      "size_ml": 150,
+      "price_inr": 1500,
+      "product_key": "src-cat-azzaro",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "needs_exact_fragrance_name_verification",
+          "message": "Listed only as Azzaro; flagged for exact fragrance-name verification (e.g. Azzaro Pour Homme)."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-0D9B10-150"
+    },
+    {
+      "row": 29,
+      "name": "AZZARO",
+      "size_ml": 100,
+      "price_inr": 1000,
+      "product_key": "src-cat-azzaro",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "needs_exact_fragrance_name_verification",
+          "message": "Listed only as Azzaro; flagged for exact fragrance-name verification (e.g. Azzaro Pour Homme)."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-0D9B10-100"
+    },
+    {
+      "row": 30,
+      "name": "AZZARO",
+      "size_ml": 50,
+      "price_inr": 500,
+      "product_key": "src-cat-azzaro",
+      "source_url": "https://www.makemyperfumestore.com/products/category/azzaro/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "needs_exact_fragrance_name_verification",
+          "message": "Listed only as Azzaro; flagged for exact fragrance-name verification (e.g. Azzaro Pour Homme)."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-0D9B10-50"
+    },
+    {
+      "row": 31,
+      "name": "BULGARI BVLGARI Aqua Pour Homme Atlantiqve",
+      "size_ml": 150,
+      "price_inr": 1800,
+      "product_key": "src-cat-bulgari-bvlgari-aqua-pour-homme-atlantiqve",
+      "source_url": "https://www.makemyperfumestore.com/products/category/bulgari-bvlgari-aqua-pour-homme-atlantiqve/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "unusual_spelling_kept",
+          "message": "Spelling kept exactly as listed."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-E8C83D-150"
+    },
+    {
+      "row": 32,
+      "name": "BULGARI BVLGARI Aqua Pour Homme Atlantiqve",
+      "size_ml": 100,
+      "price_inr": 1200,
+      "product_key": "src-cat-bulgari-bvlgari-aqua-pour-homme-atlantiqve",
+      "source_url": "https://www.makemyperfumestore.com/products/category/bulgari-bvlgari-aqua-pour-homme-atlantiqve/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "unusual_spelling_kept",
+          "message": "Spelling kept exactly as listed."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-E8C83D-100"
+    },
+    {
+      "row": 33,
+      "name": "BULGARI BVLGARI Aqua Pour Homme Atlantiqve",
+      "size_ml": 50,
+      "price_inr": 600,
+      "product_key": "src-cat-bulgari-bvlgari-aqua-pour-homme-atlantiqve",
+      "source_url": "https://www.makemyperfumestore.com/products/category/bulgari-bvlgari-aqua-pour-homme-atlantiqve/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "unusual_spelling_kept",
+          "message": "Spelling kept exactly as listed."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-E8C83D-50"
+    },
+    {
+      "row": 34,
+      "name": "1 MILLION LUCKY",
+      "size_ml": 100,
+      "price_inr": 1500,
+      "product_key": "src-cat-1-million-lucky",
+      "source_url": "https://www.makemyperfumestore.com/products/category/1-million-lucky-100-ml/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "approved_provisional_grouping",
+          "message": "Owner decision: normalized 100 ml and 150 ml category listings into 1 parent record (approved provisional grouping for staging)."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-FA007E-100"
+    },
+    {
+      "row": 35,
+      "name": "1 MILLION LUCKY",
+      "size_ml": 150,
+      "price_inr": 1700,
+      "product_key": "src-cat-1-million-lucky",
+      "source_url": "https://www.makemyperfumestore.com/products/category/1-million-lucky-150-ml/1",
+      "identity": "category_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "identity_from_category_page",
+          "message": "Grouped by the store category page, not a product id; provisional grouping approved by owner for staging."
+        },
+        {
+          "code": "approved_provisional_grouping",
+          "message": "Owner decision: normalized 100 ml and 150 ml category listings into 1 parent record (approved provisional grouping for staging)."
+        }
+      ],
+      "status": "flagged",
+      "sku": "MMP-FA007E-150"
+    },
+    {
+      "row": 36,
+      "name": "Azzaro Wanted",
+      "size_ml": null,
+      "price_inr": 0,
+      "product_key": "src-page-azzaro-wanted",
+      "source_url": "https://www.makemyperfumestore.com/products/azzaro-wanted/137",
+      "identity": "product_page",
+      "errors": [
+        {
+          "code": "price_not_valid",
+          "message": "Listed price is 0; never imported as a selling price. Confirm the real price with the owner."
+        },
+        {
+          "code": "size_missing",
+          "message": "No bottle size listed."
+        }
+      ],
+      "flags": [],
+      "status": "rejected"
+    },
+    {
+      "row": 37,
+      "name": "PRADA I HOMME",
+      "size_ml": 50,
+      "price_inr": 500,
+      "product_key": "src-page-prada-i-homme",
+      "source_url": "https://www.makemyperfumestore.com/products/prada-i-homme-50-ml/15",
+      "identity": "product_page",
+      "errors": [],
+      "flags": [
+        {
+          "code": "source_category_unverified",
+          "message": "Additional independently indexed product; catalogue page placement unverified"
+        }
+      ],
+      "status": "pending",
+      "sku": "MMP-210234-50"
+    }
+  ]
+}

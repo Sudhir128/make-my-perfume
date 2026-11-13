@@ -2,7 +2,9 @@
   position: relative;
   z-index: var(--z-header);
   width: 100%;
-  border-bottom: 1px solid var(--line);
+  background: var(--c-noir);
+  color: #ffffff;
+  border-bottom: 1px solid var(--c-line-noir);
 }
 
 .inner {
@@ -23,14 +25,14 @@
 }
 
 .categoryRow {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--c-line-noir);
 }
 
 .categories ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0 var(--s-6);
+  gap: 0 var(--s-5);
   max-width: var(--page-max);
   margin: 0 auto;
   padding: 0 var(--gutter);
@@ -41,30 +43,37 @@
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
-  color: var(--ink);
+  color: #ffffff;
   font-size: var(--t-xs);
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
   border-radius: var(--radius-small);
-  background-image: linear-gradient(var(--decor), var(--decor));
+  background-image: linear-gradient(var(--c-gold-on-noir), var(--c-gold-on-noir));
   background-repeat: no-repeat;
   background-position: 0 calc(100% - 0.55rem);
   background-size: 0 1px;
-  transition: background-size var(--d-slow) var(--ease-out);
+  transition: background-size var(--d-slow) var(--ease-out), color var(--d-fast) var(--ease-out);
 }
 
-.categories a.active,
-.categories a:hover {
+.categories a.active {
   background-size: 100% 1px;
+  color: #ffffff;
 }
 
-/* Personalized Perfume stands out, as on the previous site, in the house gold. */
+@media (hover: hover) and (pointer: fine) {
+  .categories a:hover {
+    background-size: 100% 1px;
+    color: #ffffff;
+  }
+}
+
+/* Personalized Perfume stands out in the house gold on noir. */
 .categories a.highlight,
 .sheetNav a.highlight {
-  color: var(--c-gold-text);
+  color: var(--c-gold-on-noir);
 }
 
 .iconLink {
@@ -72,52 +81,22 @@
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--c-line-noir);
   border-radius: 50%;
-  background: var(--surface);
-  color: var(--ink);
-  transition: border-color var(--d-base) var(--ease-out);
+  background: var(--c-noir-raised);
+  color: #ffffff;
+  transition: border-color var(--d-base) var(--ease-out), background-color var(--d-base) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .iconLink:hover {
-    border-color: var(--ink);
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
   }
 }
 
 .compactActions {
   gap: var(--s-2);
-}
-
-.nav ul {
-  display: flex;
-  gap: var(--s-6);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  color: var(--ink);
-  font-size: var(--t-xs);
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: var(--radius-small);
-  background-image: linear-gradient(var(--decor), var(--decor));
-  background-repeat: no-repeat;
-  background-position: 0 calc(100% - 0.55rem);
-  background-size: 0 1px;
-  transition: background-size var(--d-slow) var(--ease-out);
-}
-
-.nav a.active,
-.nav a:hover {
-  background-size: 100% 1px;
 }
 
 .brand {
@@ -127,6 +106,7 @@
   gap: var(--s-1);
   text-decoration: none;
   border-radius: var(--radius-small);
+  color: #ffffff;
 }
 
 .wordmark {
@@ -136,6 +116,7 @@
   letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .actions {
@@ -155,28 +136,28 @@
   width: 15rem;
   min-height: 2.75rem;
   padding: 0 var(--s-4) 0 2.5rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--c-line-noir);
   border-radius: var(--radius-pill);
-  background: var(--surface);
-  color: var(--ink);
+  background: var(--c-noir-raised);
+  color: #ffffff;
   font-size: var(--t-sm);
   transition: border-color var(--d-base) var(--ease-out);
 }
 
 .search input::placeholder {
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.65);
   opacity: 1;
 }
 
 .search input:focus-visible {
-  border-color: var(--ink);
+  border-color: #ffffff;
   outline-offset: 2px;
 }
 
 .searchIcon {
   position: absolute;
   left: var(--s-4);
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.75);
   pointer-events: none;
 }
 
@@ -187,12 +168,19 @@
   min-height: 2.75rem;
   padding: 0 var(--s-4) 0 var(--s-4);
   border-radius: var(--radius-pill);
-  background: var(--btn-bg);
-  color: var(--btn-ink);
+  background: var(--c-noir-raised);
+  border: 1px solid var(--c-line-noir);
+  color: #ffffff;
   font-size: var(--t-sm);
   font-weight: 500;
   text-decoration: none;
-  transition: transform var(--d-fast) var(--ease-out);
+  transition: transform var(--d-fast) var(--ease-out), border-color var(--d-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bag:hover {
+    border-color: #ffffff;
+  }
 }
 
 .bag:active {
@@ -211,9 +199,10 @@
   height: 1.5rem;
   padding: 0 var(--s-1);
   border-radius: var(--radius-pill);
-  background: var(--btn-ink);
-  color: var(--btn-bg);
+  background: #ffffff;
+  color: var(--c-noir);
   font-size: var(--t-xs);
+  font-weight: 600;
 }
 
 .menuButton,
@@ -222,10 +211,10 @@
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--c-line-noir);
   border-radius: 50%;
-  background: var(--surface);
-  color: var(--ink);
+  background: var(--c-noir-raised);
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -308,9 +297,10 @@
   left: 0;
   right: 0;
   z-index: calc(var(--z-header) + 5);
-  background: var(--c-parchment);
-  border-bottom: 1px solid var(--c-line-light);
+  background: var(--c-noir);
+  border-bottom: 1px solid var(--c-line-noir);
   box-shadow: var(--e1);
+  color: #ffffff;
   transform: translateY(-100%);
   visibility: hidden;
   transition:
@@ -354,7 +344,7 @@
   justify-content: flex-end;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
   .categories ul {
     gap: 0 var(--s-4);
   }
@@ -367,82 +357,11 @@
   .search input {
     width: 11rem;
   }
-  /* Row 1: search | brand | profile + bag. Row 2: categories. */
-.lead {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-}
-
-.categoryRow {
-  border-top: 1px solid var(--line);
-}
-
-.categories ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0 var(--s-6);
-  max-width: var(--page-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  list-style: none;
-}
-
-.categories a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  color: var(--ink);
-  font-size: var(--t-xs);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  border-radius: var(--radius-small);
-  background-image: linear-gradient(var(--decor), var(--decor));
-  background-repeat: no-repeat;
-  background-position: 0 calc(100% - 0.55rem);
-  background-size: 0 1px;
-  transition: background-size var(--d-slow) var(--ease-out);
-}
-
-.categories a.active,
-.categories a:hover {
-  background-size: 100% 1px;
-}
-
-/* Personalized Perfume stands out, as on the previous site, in the house gold. */
-.categories a.highlight,
-.sheetNav a.highlight {
-  color: var(--c-gold-text);
-}
-
-.iconLink {
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--ink);
-  transition: border-color var(--d-base) var(--ease-out);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .iconLink:hover {
-    border-color: var(--ink);
+  .categories ul {
+    gap: 0 var(--s-3);
   }
-}
-
-.compactActions {
-  gap: var(--s-2);
-}
-
-.nav ul {
-    gap: var(--s-4);
+  .categories a {
+    letter-spacing: 0.06em;
   }
 }
 
@@ -454,7 +373,6 @@
   .menuButton {
     display: grid;
   }
-  .nav,
   .desktopSearch,
   .categoryRow {
     display: none;

@@ -664,6 +664,11 @@
   list-style: none;
 }
 
+.trendingSection,
+.bestSellers {
+  padding-top: var(--section);
+}
+
 /* Make yours follows: give it its normal top spacing back. */
 .bestSellers + .signature .makeInner {
   padding-top: var(--section);

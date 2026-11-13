@@ -16,6 +16,7 @@ export interface ProductLine {
   name: string;
   collection: string;
   sizeMl: number;
+  sku?: string;
   /** Provisional INR price captured when added. */
   unitPrice: number;
   qty: number;
@@ -54,6 +55,7 @@ export const useBag = create<BagState>()(
             name: product.name,
             collection: product.collection,
             sizeMl: product.sizeMl,
+            sku: product.sku,
             unitPrice: product.price,
             qty: clampQty(qty),
           };

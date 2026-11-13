@@ -167,6 +167,12 @@
   font-size: var(--t-sm);
 }
 
+.compareAt {
+  color: var(--ink-soft);
+  font-size: var(--t-lg);
+  text-decoration: line-through;
+}
+
 .option {
   display: grid;
   gap: var(--s-2);
@@ -177,6 +183,30 @@
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
+}
+
+.sizeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.sizeOption {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--d-base) var(--ease-out), background-color var(--d-base) var(--ease-out);
+}
+
+.sizeOption[aria-checked='true'] {
+  border: 2px solid var(--ink);
 }
 
 .sizeChip {

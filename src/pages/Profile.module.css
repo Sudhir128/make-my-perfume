@@ -134,3 +134,73 @@
     grid-template-columns: 1fr;
   }
 }
+
+.orderList {
+  display: grid;
+  gap: var(--s-3);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.orderItem {
+  display: grid;
+  gap: var(--s-1);
+  padding: var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+}
+
+.orderTop {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+}
+
+.orderActions {
+  display: flex;
+  gap: var(--s-3);
+  margin-top: var(--s-1);
+}
+
+.orderBtn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.acctForm {
+  display: grid;
+  gap: var(--s-3);
+  width: 100%;
+}
+
+.confirmBox {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-sm);
+  background: var(--c-parchment);
+  margin-top: var(--s-2);
+}
+
+.confirmText {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-ink-dark);
+}
+
+.confirmActions {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+}

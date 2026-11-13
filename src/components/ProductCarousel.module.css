@@ -1,0 +1,164 @@
+.section {
+  padding-top: var(--section);
+  min-width: 0;
+  contain: layout paint;
+  overflow: hidden;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+}
+
+.head > div:first-child {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+}
+
+.title {
+  font-size: var(--t-3xl);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+}
+
+.title em {
+  display: block;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.tabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+  margin-bottom: var(--s-1);
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 2.5rem;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--c-line-light);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--c-ink-dark-soft);
+  font-family: var(--f-text);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--d-fast) var(--ease-out);
+}
+
+.tabBtn:hover {
+  border-color: var(--c-ink-dark);
+  color: var(--c-ink-dark);
+  background: var(--c-parchment);
+}
+
+.tabBtnActive {
+  background: var(--c-ink-dark);
+  color: var(--c-paper);
+  border-color: var(--c-ink-dark);
+}
+
+.tabBtnActive:hover {
+  background: var(--c-ink-dark);
+  color: var(--c-paper);
+}
+
+.tabCount {
+  font-style: normal;
+  font-size: 0.85em;
+  opacity: 0.85;
+}
+
+.arrows {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.arrowBtn {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    border-color var(--d-base) var(--ease-out),
+    background-color var(--d-base) var(--ease-out),
+    transform var(--d-fast) var(--ease-out);
+}
+
+.arrowBtn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.arrowBtn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrowBtn:hover:not(:disabled) {
+    border-color: var(--ink);
+    background: var(--bg-alt);
+  }
+}
+
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * var(--s-5)) / 3);
+  gap: var(--s-5);
+  margin: 0;
+  padding: var(--s-3) var(--s-2) var(--s-4);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-line-light) transparent;
+}
+
+.track:focus-visible {
+  outline-offset: 4px;
+}
+
+.slide {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+@media (max-width: 1080px) {
+  .track {
+    grid-auto-columns: calc((100% - var(--s-5)) / 2);
+  }
+}
+
+@media (max-width: 620px) {
+  .track {
+    grid-auto-columns: 82%;
+    gap: var(--s-4);
+  }
+}
+

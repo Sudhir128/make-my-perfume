@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router';
-import type { Product } from '../data/catalog';
+import type { Product, Variant } from '../data/catalog';
+import { trackSiteActivity } from '../data/activity';
 import { productImage } from '../data/productImages';
 import { useReveal } from '../scroll/reveal';
 import { useBag } from '../store/bag';
@@ -13,19 +14,25 @@ import styles from './ProductCard.module.css';
 
 interface ProductCardProps {
   product: Product;
+  variant?: Variant;
   headingLevel?: 'h2' | 'h3';
   /** Horizontal layout: artwork thumbnail beside the text (narrative stage 3). */
   compact?: boolean;
 }
 
 /** Curated card: shouldered material frame, name, italic price, tagline, add to bag. */
-export function ProductCard({ product, headingLevel: Heading = 'h3', compact = false }: ProductCardProps) {
+export function ProductCard({ product, variant, headingLevel: Heading = 'h3', compact = false }: ProductCardProps) {
   const addProduct = useBag((s) => s.addProduct);
   const show = useToast((s) => s.show);
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
   const href = `/product/${product.slug}`;
   const photo = productImage(product.slug);
+  const shownPrice = variant?.price ?? product.price;
+  const shownSize = variant?.sizeMl ?? product.sizeMl;
+  const shownCompareAt = variant?.sale?.compareAt ?? product.variants?.find((v) => v.sizeMl === shownSize)?.sale?.compareAt;
+  const outOfStock = product.availability === 'out_of_stock';
+  const notesLine = product.notes.top.length ? product.notes.top.join(' · ') : product.fragranceType ?? product.audience ?? '';
 
   return (
     <article ref={ref} className={[styles.card, compact ? styles.compact : ''].join(' ')} aria-labelledby={`card-${product.slug}`} data-reveal="card">
@@ -44,35 +51,40 @@ export function ProductCard({ product, headingLevel: Heading = 'h3', compact = f
             decoding="async"
           />
         ) : (
-          <ImageryPending subject={product.name} family={product.collection} shape="shoulder" ratio="1 / 1" fill="reveal" />
+          <ImageryPending subject={product.name} family={product.collection || 'Warm'} shape="shoulder" ratio="1 / 1" fill="reveal" />
         )}
       </Link>
       <div className={styles.body}>
         <p className={styles.family}>
-          <NoteGlyph family={product.collection} size={16} />
-          {product.collection}
+          <NoteGlyph family={product.collection || 'Warm'} size={16} />
+          {product.collection || product.fragranceType || 'Signature'}
         </p>
         <div className={styles.titleRow}>
           <Heading id={`card-${product.slug}`} className={styles.name}>
             <Link to={href}>{product.name}</Link>
           </Heading>
-          <Price amount={product.price} sizeMl={product.sizeMl} kind="provisional" hideTag />
+          <Price amount={shownPrice} sizeMl={shownSize} compareAt={shownCompareAt} kind="provisional" hideTag />
         </div>
-        <p className={styles.tagline}>{product.tagline}</p>
-        <p className={styles.notes}>
-          <span className="visually-hidden">Top notes: </span>
-          {product.notes.top.join(' · ')}
-        </p>
+        {product.tagline && <p className={styles.tagline}>{product.tagline}</p>}
+        {notesLine && (
+          <p className={styles.notes}>
+            <span className="visually-hidden">Notes: </span>
+            {notesLine}
+          </p>
+        )}
         <Button
           variant="ghost"
           small
+          disabled={outOfStock}
           className={styles.add}
           onClick={() => {
-            addProduct(product);
+            addProduct({ ...product, price: shownPrice, sizeMl: shownSize, sku: variant?.sku ?? product.sku });
+            trackSiteActivity('bag.item_added', 'product', product.slug, `Added ${product.name} (${shownSize} ml) to bag`);
             show(`${product.name} added to your bag.`, { label: 'View bag', to: '/bag' });
           }}
         >
-          Add to bag<span className="visually-hidden">, {product.name}</span>
+          {outOfStock ? 'Out of stock' : 'Add to bag'}
+          <span className="visually-hidden">, {product.name}</span>
         </Button>
       </div>
     </article>

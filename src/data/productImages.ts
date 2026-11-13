@@ -35,6 +35,14 @@ const IMAGES: Record<string, ProductImage> = {
   'saffron-neroli': img(saffron480, saffron960, 'Tall perfume bottle with a gold cap on cream satin'),
 };
 
+/** Verified images of catalogue-managed products, registered when they load. */
+const REMOTE = new Map<string, ProductImage>();
+
+export function registerRemoteImage(slug: string, image: ProductImage | null) {
+  if (image) REMOTE.set(slug, image);
+  else REMOTE.delete(slug);
+}
+
 export function productImage(slug: string): ProductImage | null {
-  return IMAGES[slug] ?? null;
+  return IMAGES[slug] ?? REMOTE.get(slug) ?? null;
 }
